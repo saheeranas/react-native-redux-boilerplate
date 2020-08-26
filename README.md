@@ -1,6 +1,7 @@
-# rn_redux_boilerplate
+# rn_redux_boilerplate - React Native Redux Starter Template
 
 A starter template for React Native with react-native-cli, redux and redux-thunk.
+- React Native v0.63.2 
 
 ## License
 
