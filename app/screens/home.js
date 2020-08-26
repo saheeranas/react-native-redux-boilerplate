@@ -9,7 +9,8 @@ import {
   ActivityIndicator,
   TextInput,
   Pressable,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from "react-native";
 
 import { bindActionCreators } from "redux";
@@ -68,13 +69,13 @@ class Home extends Component {
               style={({ pressed }) => [
                 {
                   backgroundColor: pressed
-                    ? 'rgb(210, 230, 255)'
-                    : '#0087f6'
+                    ? '#0b891c'
+                    : '#39b54a'
                 },
                 styles.btnAdd
               ]}
             >
-              <Text>Add</Text>
+              <Text style={styles.btnAddText}>ADD</Text>
             </Pressable>
           </View>
           {/* TextInput and InputButton ends here */}
@@ -88,10 +89,16 @@ class Home extends Component {
 // List Item component
 export const Card = ({item, index, onPress}) => {
   return (
-    <TouchableOpacity style={styles.row} onPress={() => onPress(item.id)}>
-      <Text style={[styles.title, { textDecorationLine: item.done ? 'line-through' : 'none' }]}>
+    <TouchableOpacity style={[styles.row, { opacity: item.done ? 0.8 : 1 }]} onPress={() => onPress(item.id)}>
+      <Text style={
+        [
+          styles.title, 
+          { textDecorationLine: item.done ? 'line-through' : 'none' }
+        ]
+        }>
         {item.task}
       </Text>
+      <Image source={require("../assets/images/tick.png")} style={[styles.tickIcon, { tintColor: item.done ? '#00d258' : 'gray' }]} />
     </TouchableOpacity>
   )
 }  
@@ -127,20 +134,23 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  row: {
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
-    padding: 10
+  row: { 
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
 
   title: {
-    fontSize: 15,
-    fontWeight: "600"
-  },
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#4d505b"
+  }, 
 
-  description: {
-    marginTop: 5,
-    fontSize: 14
+  tickIcon: {
+    width: 22,
+    height: 22
   },
 
   inputBtnWrapper: {
@@ -152,15 +162,23 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
-    flex: 0.65
+    flex: 0.72,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    fontSize: 18,
   },
 
   btnAdd: {
     borderRadius: 5,
     padding: 6,
-    flex: 0.3,
+    flex: 0.25,
     justifyContent: "center",
     alignItems: "center",
-    color: "#fff"
+    color: "#fff",
+    fontSize: 18,
   },
+
+  btnAddText: {
+    color: "#fff"
+  }
 });
