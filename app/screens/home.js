@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import {
   StyleSheet,
   FlatList,
@@ -10,28 +10,28 @@ import {
   TextInput,
   Pressable,
   TouchableOpacity,
-  Image
-} from "react-native";
+  Image,
+} from 'react-native';
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-import * as Actions from "../store/actions"; //Import your actions
+import * as Actions from '../store/actions'; //Import your actions
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      text: ""
-    };  
+      text: '',
+    };
   }
 
   componentDidMount() {
     this.props.getData(); //call our action
-  }  
+  }
 
-  render() { 
+  render() {
     if (this.props.loading) {
       return (
         <View style={styles.activityIndicatorContainer}>
@@ -40,68 +40,71 @@ class Home extends Component {
       );
     } else {
       return (
-        <View style={{ flex: 0.95, backgroundColor: "#F5F5F5", paddingTop: 20 }}>
-
+        <View style={{flex: 0.95, backgroundColor: '#F5F5F5', paddingTop: 20}}>
           {/* Tasks Listing starts here */}
           <FlatList
             ref="listRef"
             data={this.props.data}
-            renderItem={({ item, index }) => (
-              <Card item={item} index={index} onPress={id => this.props.markAsDone(id)} />
-            )} 
+            renderItem={({item, index}) => (
+              <Card
+                item={item}
+                index={index}
+                onPress={(id) => this.props.markAsDone(id)}
+              />
+            )}
             keyExtractor={(item, index) => `${index}`}
-          /> 
+          />
           {/* Tasks Listing ends here */}
 
           {/* TextInput and InputButton starts here */}
           <View style={styles.inputBtnWrapper}>
-            <TextInput 
+            <TextInput
               value={this.state.text}
               placeholder="New Task"
               style={styles.input}
-              onChangeText={text => this.setState({ text })}
+              onChangeText={(text) => this.setState({text})}
             />
             <Pressable
               onPress={() => {
-                this.props.addData({ id: 0, task: this.state.text })
-                this.setState({ text: '' })
+                this.props.addData({id: 0, task: this.state.text});
+                this.setState({text: ''});
               }}
-              style={({ pressed }) => [
+              style={({pressed}) => [
                 {
-                  backgroundColor: pressed
-                    ? '#0b891c'
-                    : '#39b54a'
+                  backgroundColor: pressed ? '#0b891c' : '#39b54a',
                 },
-                styles.btnAdd
-              ]}
-            >
+                styles.btnAdd,
+              ]}>
               <Text style={styles.btnAddText}>ADD</Text>
             </Pressable>
           </View>
           {/* TextInput and InputButton ends here */}
-
         </View>
       );
     }
-  } 
-} 
+  }
+}
 
 // List Item component
 export const Card = ({item, index, onPress}) => {
   return (
-    <TouchableOpacity style={[styles.row, { opacity: item.done ? 0.8 : 1 }]} onPress={() => onPress(item.id)}>
-      <Text style={
-        [
-          styles.title, 
-          { textDecorationLine: item.done ? 'line-through' : 'none' }
-        ]
-        }>
+    <TouchableOpacity
+      style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
+      onPress={() => onPress(item.id)}>
+      <Text
+        style={[
+          styles.title,
+          {textDecorationLine: item.done ? 'line-through' : 'none'},
+        ]}>
         {item.task}
       </Text>
-      <Image source={require("../assets/images/tick.png")} style={[styles.tickIcon, { tintColor: item.done ? '#00d258' : 'gray' }]} />
+      <Image
+        source={require('../assets/images/tick.png')}
+        style={[styles.tickIcon, {tintColor: item.done ? '#00d258' : 'gray'}]}
+      />
     </TouchableOpacity>
-  )
-}  
+  );
+};
 
 // The function takes data from the app current state,
 // and insert/links it into the props of our component.
@@ -109,7 +112,7 @@ export const Card = ({item, index, onPress}) => {
 function mapStateToProps(state, props) {
   return {
     loading: state.dataReducer.loading,
-    data: state.dataReducer.data
+    data: state.dataReducer.data,
   };
 }
 
@@ -121,42 +124,39 @@ function mapDispatchToProps(dispatch) {
 }
 
 //Connect everything
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 const styles = StyleSheet.create({
   activityIndicatorContainer: {
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    flex: 1
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
   },
 
-  row: { 
+  row: {
     paddingHorizontal: 16,
     paddingVertical: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   title: {
     fontSize: 18,
-    fontWeight: "600",
-    color: "#4d505b"
-  }, 
+    fontWeight: '600',
+    color: '#4d505b',
+  },
 
   tickIcon: {
     width: 22,
-    height: 22
+    height: 22,
   },
 
   inputBtnWrapper: {
     flexDirection: 'row',
-    justifyContent: "space-between",
-    paddingHorizontal: 16, 
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
   },
 
   input: {
@@ -172,13 +172,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 6,
     flex: 0.25,
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#fff",
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#fff',
     fontSize: 18,
   },
 
   btnAddText: {
-    color: "#fff"
-  }
+    color: '#fff',
+  },
 });
