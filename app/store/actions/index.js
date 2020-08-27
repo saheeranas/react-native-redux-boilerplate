@@ -1,6 +1,7 @@
 export const DATA_AVAILABLE = 'DATA_AVAILABLE';
 export const ADD_DATA = 'ADD_DATA';
 export const MARK_DONE = 'MARK_DONE';
+export const CLEAR_ALL = 'CLEAR_ALL';
 
 //Import the sample data
 import Data from '../sampledata.json';
@@ -21,5 +22,11 @@ export function addData(data) {
 export function markAsDone(id) {
   return (dispatch) => {
     dispatch({type: MARK_DONE, id});
+  };
+}
+
+export function clearAll() {
+  return (dispatch) => {
+    dispatch({type: CLEAR_ALL});
   };
 }

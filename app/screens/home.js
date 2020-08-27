@@ -31,6 +31,12 @@ class Home extends Component {
     this.props.getData(); //call our action
   }
 
+  addNewTask = () => {
+    let text = this.state.text.trim();
+    if (text !== '') this.props.addData({task: this.state.text});
+    this.setState({text: ''});
+  };
+
   render() {
     if (this.props.loading) {
       return (
@@ -56,6 +62,12 @@ class Home extends Component {
           />
           {/* Tasks Listing ends here */}
 
+          <Pressable
+            style={styles.btnClear}
+            onPress={() => this.props.clearAll()}>
+            <Text style={styles.btnAddText}>Clear All</Text>
+          </Pressable>
+
           {/* TextInput and InputButton starts here */}
           <View style={styles.inputBtnWrapper}>
             <TextInput
@@ -64,17 +76,7 @@ class Home extends Component {
               style={styles.input}
               onChangeText={(text) => this.setState({text})}
             />
-            <Pressable
-              onPress={() => {
-                this.props.addData({id: 0, task: this.state.text});
-                this.setState({text: ''});
-              }}
-              style={({pressed}) => [
-                {
-                  backgroundColor: pressed ? '#0b891c' : '#39b54a',
-                },
-                styles.btnAdd,
-              ]}>
+            <Pressable onPress={() => this.addNewTask()} style={styles.btnAdd}>
               <Text style={styles.btnAddText}>ADD</Text>
             </Pressable>
           </View>
@@ -174,11 +176,24 @@ const styles = StyleSheet.create({
     flex: 0.25,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#5855d6',
     color: '#fff',
     fontSize: 18,
   },
 
   btnAddText: {
     color: '#fff',
+  },
+
+  btnClear: {
+    borderRadius: 5,
+    padding: 10,
+    marginHorizontal: 16,
+    marginVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ff2c55',
+    color: '#fff',
+    fontSize: 18,
   },
 });
