@@ -18,7 +18,7 @@ import {connect} from 'react-redux';
 
 import * as Actions from '../store/actions'; //Import your actions
 
-class Home extends Component {
+class TasksClass extends Component {
   constructor(props) {
     super(props);
 
@@ -120,13 +120,13 @@ function mapStateToProps(state, props) {
 
 // Doing this merges our actions into the component’s props,
 // while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
+// Just by doing this, we will have access to the actions defined in out actions file (action/index.js)
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(Actions, dispatch);
 }
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(TasksClass);
 
 const styles = StyleSheet.create({
   activityIndicatorContainer: {
