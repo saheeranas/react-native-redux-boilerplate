@@ -7,6 +7,7 @@ A starter template for React Native with Redux Persist.
 - Redux setup complete.
 - Redux Persist configured (For offline support).
 - Redux Thunk configured (For async support).
+- Sample App included. Added a basic Todo App both in Class & Function components.
 
 ## Dependencies
 
