@@ -11,7 +11,7 @@ A starter template for React Native with Redux Persist.
 
 ## Dependencies
 
-- React Native v0.63.2
+- React Native v0.63.4
 - Redux
 - React Redux
 - Redux Thunk
