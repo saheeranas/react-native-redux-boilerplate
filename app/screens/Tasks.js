@@ -16,17 +16,17 @@ import {todoAdded, todoToggled, completedTodosCleared} from './tasksSlice';
 
 const Tasks = (props) => {
   const todoList = useSelector((state) => state.todos.entities);
-  const loadingStatus = useSelector((state) => state.todos.status);
+  // const loadingStatus = useSelector((state) => state.todos.status);
   const dispatch = useDispatch();
 
   const [text, setText] = useState('');
 
-  addNewTask = () => {
+  const addNewTask = () => {
     let temp = text.trim();
     if (temp !== '')
       dispatch(todoAdded({id: Date.now(), title: temp, done: false}));
     setText('');
-  }; 
+  };
 
   return (
     <View style={{flex: 0.95, backgroundColor: '#F5F5F5', paddingTop: 20}}>
