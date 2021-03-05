@@ -11,21 +11,20 @@ import {
   Image,
 } from 'react-native';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {todoAdded, todoToggled, completedTodosCleared} from './tasksSlice';
 
-import * as Actions from '../store/actions'; //Import your actions;
+const Tasks = (props) => {
+  const todoList = useSelector((state) => state.todos.entities);
+  // const loadingStatus = useSelector((state) => state.todos.status);
+  const dispatch = useDispatch();
 
-const TasksFunc = (props) => {
   const [text, setText] = useState('');
 
-  useEffect(() => {
-    props.getData();
-  }, []);
-
-  addNewTask = () => {
+  const addNewTask = () => {
     let temp = text.trim();
-    if (temp !== '') props.addData({task: temp});
+    if (temp !== '')
+      dispatch(todoAdded({id: Date.now(), title: temp, done: false}));
     setText('');
   };
 
@@ -33,19 +32,21 @@ const TasksFunc = (props) => {
     <View style={{flex: 0.95, backgroundColor: '#F5F5F5', paddingTop: 20}}>
       {/* Tasks Listing starts here */}
       <FlatList
-        data={props.data}
+        data={todoList}
         renderItem={({item, index}) => (
           <Card
             item={item}
             index={index}
-            onPress={(id) => props.markAsDone(id)}
+            onPress={() => dispatch(todoToggled(item.id))}
           />
         )}
         keyExtractor={(item, index) => `${index}`}
       />
       {/* Tasks Listing ends here */}
 
-      <Pressable style={styles.btnClear} onPress={() => props.clearAll()}>
+      <Pressable
+        style={styles.btnClear}
+        onPress={() => dispatch(completedTodosCleared())}>
         <Text style={styles.btnAddText}>Clear All</Text>
       </Pressable>
 
@@ -71,13 +72,13 @@ export const Card = ({item, index, onPress}) => {
   return (
     <TouchableOpacity
       style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
-      onPress={() => onPress(item.id)}>
+      onPress={() => onPress()}>
       <Text
         style={[
           styles.title,
           {textDecorationLine: item.done ? 'line-through' : 'none'},
         ]}>
-        {item.task}
+        {item.title}
       </Text>
       <Image
         source={require('../assets/images/tick.png')}
@@ -87,25 +88,7 @@ export const Card = ({item, index, onPress}) => {
   );
 };
 
-// The function takes data from the app current state,
-// and insert/links it into the props of our component.
-// This function makes Redux know that this component needs to be passed a piece of the state
-function mapStateToProps(state, props) {
-  return {
-    loading: state.dataReducer.loading,
-    data: state.dataReducer.data,
-  };
-}
-
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/index.js)
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(Actions, dispatch);
-}
-
-//Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(TasksFunc);
+export default Tasks;
 
 const styles = StyleSheet.create({
   activityIndicatorContainer: {
