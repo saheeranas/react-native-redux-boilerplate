@@ -1,21 +1,16 @@
-# rn_redux_boilerplate - React Native Redux Starter Template with Offline support
+# React Native Redux starter template with Redux Toolkit (RTK)
 
-A starter template for React Native with Redux Persist.
+A starter template for React Native.
 
 ## Features
 
-- Redux setup complete.
-- Redux Persist configured (For offline support).
-- Redux Thunk configured (For async support).
-- Sample App included. Added a basic Todo App both in Class & Function components.
+- Redux setup with Redux Toolkit.
+- Sample code included.
 
 ## Dependencies
 
 - React Native v0.63.4
-- Redux
-- React Redux
-- Redux Thunk
-- Redux Persist
+- Redux Toolkit (RTK)
 
 ## Installation
 
@@ -29,18 +24,24 @@ Open project folder and install dependencies
 
 ```
 cd rn_redux_boilerplate
+yarn
+or
 npm i
 ```
 
 Run the project
 
 ```
+yarn android
+or
 npm run android
 ```
 
 or
 
 ```
+yarn ios
+or
 npm run ios
 ```
 
