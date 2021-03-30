@@ -23,13 +23,13 @@ A starter template for React Native.
 Clone this repo
 
 ```
-git clone https://github.com/saheeranas/rn_redux_boilerplate.git`
+git clone https://github.com/saheeranas/react-native-redux-boilerplate.git`
 ```
 
 Open project folder and install dependencies
 
 ```
-cd rn_redux_boilerplate
+cd react-native-redux-boilerplate
 yarn
 or
 npm i
