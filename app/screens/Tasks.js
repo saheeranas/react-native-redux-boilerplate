@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   FlatList,
   View,
   Text,
-  ActivityIndicator,
   TextInput,
   Pressable,
   TouchableOpacity,
@@ -14,8 +13,8 @@ import {
 import {useSelector, useDispatch} from 'react-redux';
 import {todoAdded, todoToggled, completedTodosCleared} from './tasksSlice';
 
-const Tasks = (props) => {
-  const todoList = useSelector((state) => state.todos.entities);
+const Tasks = props => {
+  const todoList = useSelector(state => state.todos.entities);
   // const loadingStatus = useSelector((state) => state.todos.status);
   const dispatch = useDispatch();
 
@@ -47,7 +46,7 @@ const Tasks = (props) => {
       <Pressable
         style={styles.btnClear}
         onPress={() => dispatch(completedTodosCleared())}>
-        <Text style={styles.btnAddText}>Clear All</Text>
+        <Text style={styles.btnAddText}>Clear Completed</Text>
       </Pressable>
 
       {/* TextInput and InputButton starts here */}
@@ -56,7 +55,7 @@ const Tasks = (props) => {
           value={text}
           placeholder="New Task"
           style={styles.input}
-          onChangeText={(text) => setText(text)}
+          onChangeText={text => setText(text)}
         />
         <Pressable onPress={() => addNewTask()} style={styles.btnAdd}>
           <Text style={styles.btnAddText}>ADD</Text>

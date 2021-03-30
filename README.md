@@ -9,7 +9,7 @@ A starter template for React Native.
 
 ## Dependencies
 
-- React Native v0.63.4
+- React Native **v0.64.0**
 - Redux Toolkit (RTK)
 
 ## Installation

@@ -26,11 +26,11 @@ const todosSlice = createSlice({
     },
     todoToggled(state, action) {
       const todoId = action.payload;
-      const todo = state.entities.find((e) => e.id === todoId);
+      const todo = state.entities.find(e => e.id === todoId);
       todo.done = !todo.done;
     },
     completedTodosCleared(state, action) {
-      state.entities = state.entities.filter((todo) => !todo.done);
+      state.entities = state.entities.filter(todo => !todo.done);
     },
   },
 });
