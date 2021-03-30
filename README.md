@@ -1,3 +1,9 @@
+<!--
+  Title: React Native Redux Boilerplate
+  Description: A starter template for React Native with Redux Toolkit
+  Author: saheeranas
+  -->
+
 # React Native Redux starter template with Redux Toolkit (RTK)
 
 A starter template for React Native.
