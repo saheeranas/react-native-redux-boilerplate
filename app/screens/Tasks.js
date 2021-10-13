@@ -11,7 +11,11 @@ import {
 } from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {todoAdded, todoToggled, completedTodosCleared} from './tasksSlice';
+import {
+  todoAdded,
+  todoToggled,
+  completedTodosCleared,
+} from '../store/tasksSlice';
 
 const Tasks = props => {
   const todoList = useSelector(state => state.todos.entities);
@@ -28,7 +32,7 @@ const Tasks = props => {
   };
 
   return (
-    <View style={{flex: 0.95, backgroundColor: '#F5F5F5', paddingTop: 20}}>
+    <View style={{flex: 0.95, backgroundColor: '#ffffff', paddingTop: 20}}>
       {/* Tasks Listing starts here */}
       <FlatList
         data={todoList}

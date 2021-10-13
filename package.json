@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.23.0",
+    "formik": "^2.2.9",
     "react": "17.0.2",
     "react-native": "0.66.0",
-    "react-redux": "^7.2.5"
+    "react-redux": "^7.2.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
