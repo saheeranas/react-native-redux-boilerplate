@@ -1548,17 +1548,17 @@
   resolved "https://registry.npmjs.org/@react-native/normalize-color/-/normalize-color-1.0.0.tgz"
   integrity sha512-xUNRvNmCl3UGCPbbHvfyFMnpvLPoOjDCcp5bT9m2k+TF/ZBklEQwhPZlkrxRx2NhgFh1X3a5uL7mJ7ZR+8G7Qg==
 
-"@react-native/polyfills@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@react-native/polyfills/-/polyfills-1.0.0.tgz"
-  integrity sha512-0jbp4RxjYopTsIdLl+/Fy2TiwVYHy4mgeu07DG4b/LyM0OS/+lPP5c9sbnt/AMlnF6qz2JRZpPpGw1eMNS6A4w==
+"@react-native/polyfills@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-2.0.0.tgz#4c40b74655c83982c8cf47530ee7dc13d957b6aa"
+  integrity sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==
 
-"@reduxjs/toolkit@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.6.1.tgz#7bc83b47352a663bf28db01e79d17ba54b98ade9"
-  integrity sha512-pa3nqclCJaZPAyBhruQtiRwtTjottRrVJqziVZcWzI73i6L3miLTtUyWfauwv08HWtiXLx1xGyGt+yLFfW/d0A==
+"@reduxjs/toolkit@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.6.2.tgz#2f2b5365df77dd6697da28fdf44f33501ed9ba37"
+  integrity sha512-HbfI/hOVrAcMGAYsMWxw3UJyIoAS9JTdwddsjlr5w3S50tXhWb+EMyhIw+IAvCVCLETkzdjgH91RjDSYZekVBA==
   dependencies:
-    immer "^9.0.1"
+    immer "^9.0.6"
     redux "^4.1.0"
     redux-thunk "^2.3.0"
     reselect "^4.0.0"
@@ -3573,10 +3573,10 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hermes-engine@~0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/hermes-engine/-/hermes-engine-0.8.1.tgz#b6d0d70508ac5add2d198304502fb968cdecb8b2"
-  integrity sha512-as9Iccj/qrqqtDmfYUHbOIjt5xsQbUB6pjNIW3i1+RVr+pCAdz5S8/Jry778mz3rJWplYzHWdR1u1xQSYfBRYw==
+hermes-engine@~0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/hermes-engine/-/hermes-engine-0.9.0.tgz#84d9cfe84e8f6b1b2020d6e71b350cec84ed982f"
+  integrity sha512-r7U+Y4P2Qg/igFVZN+DpT7JFfXUn1MM4dFne8aW+cCrF6RRymof+VqrUHs1kl07j8h8V2CNesU19RKgWbr3qPw==
 
 hermes-parser@0.4.7:
   version "0.4.7"
@@ -3661,7 +3661,7 @@ image-size@^0.6.0:
   resolved "https://registry.npmjs.org/image-size/-/image-size-0.6.3.tgz"
   integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
 
-immer@^9.0.1:
+immer@^9.0.6:
   version "9.0.6"
   resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.6.tgz#7a96bf2674d06c8143e327cbf73539388ddf1a73"
   integrity sha512-G95ivKpy+EvVAnAab4fVa4YGYn24J1SpEktnJX7JJ45Bd7xqME/SCplFzYFmTbrkwZbQ4xJK1xMTUYBkN6pWsQ==
@@ -5727,10 +5727,10 @@ range-parser@~1.2.1:
   resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
-react-devtools-core@^4.6.0:
-  version "4.10.1"
-  resolved "https://registry.npmjs.org/react-devtools-core/-/react-devtools-core-4.10.1.tgz"
-  integrity sha512-sXbBjGAWcf9HAblTP/zMtFhGHqxAfIR+GPxONZsSGN9FHnF4635dx1s2LdQWG9rJ+Ehr3nWg+BUAB6P78my5PA==
+react-devtools-core@^4.13.0:
+  version "4.19.2"
+  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.19.2.tgz#57f5d19b67e8658323474ab51c6c1292bf8243c9"
+  integrity sha512-Z9K+h9gjEwimZtZB1NsWm5hQsxAcElW0GI2KXLQDpk2o1YIZQ+lOSesUr0npUyLeb37k2hTtyxp8wumeRJpG5Q==
   dependencies:
     shell-quote "^1.6.1"
     ws "^7"
@@ -5754,10 +5754,10 @@ react-native-codegen@^0.0.7:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native@0.65.1:
-  version "0.65.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.65.1.tgz#bd8cd313e0eb8ddcf08e61e3f8b54b7fc31a418c"
-  integrity sha512-0UOVSnlssweQZjuaUtzViCifE/4tXm8oRbxwakopc8GavPu9vLulde145GOw6QVYiOy4iL50f+2XXRdX9NmMeQ==
+react-native@0.66.0:
+  version "0.66.0"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.66.0.tgz#99bdd83a9a612a71b94242767989d666d445b007"
+  integrity sha512-m26TKwzsfHVdZ1hDG+7mZ4M4ftxFFZrhtiT0OXuwfBzmNtB3xhsJtYszPeizw33c9YNp8rvehKT3c4ldDCW6kA==
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
     "@react-native-community/cli" "^6.0.0"
@@ -5765,12 +5765,12 @@ react-native@0.65.1:
     "@react-native-community/cli-platform-ios" "^6.0.0"
     "@react-native/assets" "1.0.0"
     "@react-native/normalize-color" "1.0.0"
-    "@react-native/polyfills" "1.0.0"
+    "@react-native/polyfills" "2.0.0"
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
     event-target-shim "^5.0.1"
-    hermes-engine "~0.8.1"
+    hermes-engine "~0.9.0"
     invariant "^2.2.4"
     jsc-android "^250230.2.1"
     metro-babel-register "0.66.2"
@@ -5781,7 +5781,8 @@ react-native@0.65.1:
     pretty-format "^26.5.2"
     promise "^8.0.3"
     prop-types "^15.7.2"
-    react-devtools-core "^4.6.0"
+    react-devtools-core "^4.13.0"
+    react-native-codegen "^0.0.7"
     react-refresh "^0.4.0"
     regenerator-runtime "^0.13.2"
     scheduler "^0.20.2"
@@ -5790,10 +5791,10 @@ react-native@0.65.1:
     whatwg-fetch "^3.0.0"
     ws "^6.1.4"
 
-react-redux@7.2.4:
-  version "7.2.4"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.4.tgz#1ebb474032b72d806de2e0519cd07761e222e225"
-  integrity sha512-hOQ5eOSkEJEXdpIKbnRyl04LhaWabkDPV+Ix97wqQX3T3d2NQ8DUblNXXtNMavc7DpswyQM6xfaN4HQDKNY2JA==
+react-redux@^7.2.5:
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.5.tgz#213c1b05aa1187d9c940ddfc0b29450957f6a3b8"
+  integrity sha512-Dt29bNyBsbQaysp6s/dN0gUodcq+dVKKER8Qv82UrpeygwYeX1raTtil7O/fftw/rFqzaf6gJhDZRkkZnn6bjg==
   dependencies:
     "@babel/runtime" "^7.12.1"
     "@types/react-redux" "^7.1.16"
