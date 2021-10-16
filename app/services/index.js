@@ -1,5 +1,5 @@
 import apiClient from './api-client';
-const BASE_URL = 'https://hacker-news.firebaseio.com/v0';
+const BASE_URL = 'http://10.0.2.2:4001';
 
 const contentTypes = {
   json: 'application/json',
@@ -11,27 +11,27 @@ const get = route => {
 };
 
 // Base function for POST requests
-// export const _post = async (api, body, {user = {}, type = ''}) => {
-//   let headers = {Accept: 'application/json'};
-//   if (user['token']) {
-//     headers['Authorization'] = `Bearer ${user['token']}`;
-//   }
-//   if (type !== '') {
-//     headers['Content-Type'] = contentTypes[type];
-//   }
-//   return fetch(`${process.env.REACT_APP_API_URI}/${api}`, {
-//     method: 'post',
-//     headers,
-//     body: body,
-//   }).then(res => statusHandler(res));
-// };
+const post = async (route, {body, type = '', user = {}}) => {
+  let headers = {Accept: 'application/json'};
+  if (user['token']) {
+    headers['Authorization'] = `Bearer ${user['token']}`;
+  }
+  if (type !== '') {
+    headers['Content-Type'] = contentTypes[type];
+  }
+  return apiClient({
+    method: 'post',
+    url: `${BASE_URL}/${route}`,
+    headers,
+    data: body,
+  });
+};
 
 // Status Handler
 const statusHandler = async res => {
   switch (res.status) {
     case 200: {
-      let data = await res.json();
-      return data;
+      return res;
     }
     case 403: {
       // localStorage.clear();
@@ -39,17 +39,18 @@ const statusHandler = async res => {
       return res;
     }
     default: {
-      let errors = await res.json();
-      throw errors;
+      throw res;
     }
   }
 };
 
 // Routes
 const routes = {
-  getNews: '/news',
+  login: 'login',
+  getNews: 'news',
 };
 
-export {get};
+export {routes, get, post};
 
+export {login} from './auth';
 export {getNews} from './news';

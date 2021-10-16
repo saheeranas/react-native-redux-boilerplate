@@ -20,7 +20,7 @@ const typeSizes = {
 const themes = {
   light: {
     name: 'light',
-    color: '#000000',
+    color: 'rgb(58, 58, 60)',
     layoutBg: '#f0f0f0',
     cardBg: '#ffffff',
   },

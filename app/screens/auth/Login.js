@@ -6,8 +6,9 @@ import * as Yup from 'yup';
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
 import {Input} from '../../components/Form';
-
 const AppIcon = require('../../assets/images//appicon.png');
+
+import {login} from '../../services';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -15,6 +16,15 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
+  const handleLogin = async values => {
+    try {
+      let res = await login(values);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <Layout>
       <ScrollView contentContainerStyle={styles.scrollview}>
@@ -24,7 +34,7 @@ const Login = () => {
             <Formik
               initialValues={{username: '', password: ''}}
               validationSchema={LoginSchema}
-              onSubmit={values => console.log(values)}>
+              onSubmit={values => handleLogin(values)}>
               {({
                 handleChange,
                 handleBlur,
