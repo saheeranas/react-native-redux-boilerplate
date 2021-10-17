@@ -15,8 +15,11 @@ A starter template for React Native.
 
 ## Dependencies
 
-- React Native **v0.65.1**
-- Redux Toolkit (RTK) **v1.6.1**
+- React Native **v0.66.0**
+- Redux Toolkit (RTK) v1.6.2
+- React Navigation v6
+- React Native Vector Icons
+- Formik & Yup
 
 ## Installation
 
