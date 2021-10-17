@@ -30,14 +30,13 @@ export default function RootNavigation() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          headerShown: false,
           tabBarStyle: {backgroundColor: theme.cardBg},
           tabBarInactiveTintColor: theme.color,
           tabBarActiveTintColor: theme.accent,
           tabBarShowLabel: false,
         }}>
         <Tab.Screen
-          name="Home"
+          name="To Do"
           component={Tasks}
           options={{
             tabBarIcon: homeIcon,
@@ -47,6 +46,7 @@ export default function RootNavigation() {
           name="Settings"
           component={Settings}
           options={{
+            headerShown: false,
             tabBarIcon: settingsIcon,
           }}
         />

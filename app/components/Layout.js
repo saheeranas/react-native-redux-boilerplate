@@ -3,10 +3,10 @@ import {StyleSheet, View} from 'react-native';
 
 import {useTheme} from '../theme/useTheme';
 
-const Layout = ({children}) => {
+const Layout = ({children, style}) => {
   const {theme} = useTheme();
   return (
-    <View style={[styles.layout, {backgroundColor: theme.layoutBg}]}>
+    <View style={[styles.layout, {backgroundColor: theme.layoutBg}, style]}>
       {children}
     </View>
   );
