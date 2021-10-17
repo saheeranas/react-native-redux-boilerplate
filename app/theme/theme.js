@@ -23,12 +23,14 @@ const themes = {
     color: 'rgb(58, 58, 60)',
     layoutBg: '#f0f0f0',
     cardBg: '#ffffff',
+    accent: 'red',
   },
   dark: {
     name: 'dark',
     color: '#ffffff',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
+    accent: 'red',
   },
 };
 

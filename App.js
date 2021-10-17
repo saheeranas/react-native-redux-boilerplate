@@ -9,14 +9,17 @@ import Tasks from './app/screens/Tasks';
 import Settings from './app/screens/Settings';
 import Demo from './app/screens/Demo';
 
+import RootNavigation from './app/routes/RootNavigation';
+
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <ThemeProvider>
+          <RootNavigation />
           {/* <Login /> */}
           {/* <Tasks /> */}
-          <Settings />
+          {/* <Settings /> */}
           {/* <Demo /> */}
         </ThemeProvider>
       </Provider>
