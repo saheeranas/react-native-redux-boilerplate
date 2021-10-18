@@ -27,23 +27,6 @@ const post = async (route, {body, type = '', user = {}}) => {
   });
 };
 
-// Status Handler
-const statusHandler = async res => {
-  switch (res.status) {
-    case 200: {
-      return res;
-    }
-    case 403: {
-      // localStorage.clear();
-      // window.location.reload();
-      return res;
-    }
-    default: {
-      throw res;
-    }
-  }
-};
-
 // Routes
 const routes = {
   login: 'login',

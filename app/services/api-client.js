@@ -1,4 +1,5 @@
 import axios from 'axios';
+import statusHandler from './statusHandler';
 
 // Add a request interceptor
 axios.interceptors.request.use(
@@ -21,6 +22,8 @@ axios.interceptors.response.use(
   },
   function (error) {
     // Do something with response error
+    statusHandler(error);
+    // console.log(error);
     return Promise.reject(error);
   },
 );

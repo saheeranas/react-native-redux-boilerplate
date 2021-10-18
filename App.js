@@ -4,10 +4,10 @@ import {Provider} from 'react-redux';
 import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
 
-import Login from './app/screens/auth/Login';
+import Demo from './app/screens/Demo';
+// import Login from './app/screens/auth/Login';
 // import Tasks from './app/screens/Tasks';
 // import Settings from './app/screens/Settings';
-// import Demo from './app/screens/Demo';
 // import NoInternet from './app/components/NoInternet';
 // import NotFound from './app/components/NotFound';
 
@@ -18,13 +18,13 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider>
-          <RootNavigation />
+          <Demo />
+          {/* <RootNavigation /> */}
           {/* <NotFound /> */}
           {/* <NoInternet /> */}
           {/* <Login /> */}
           {/* <Tasks /> */}
           {/* <Settings /> */}
-          {/* <Demo /> */}
         </ThemeProvider>
       </Provider>
     );
