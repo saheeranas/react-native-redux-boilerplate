@@ -8,7 +8,11 @@ import Card from '../../components/Card';
 import {Input} from '../../components/Form';
 const AppIcon = require('../../assets/images//appicon.png');
 
+import {useDispatch} from 'react-redux';
+import {updateUser} from '../../store/userSlice';
+
 import {login} from '../../services';
+import {setSecureValue} from '../../utils/token';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -16,20 +20,27 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
-  const handleLogin = async values => {
-    try {
-      let res = await login(values);
-      console.log(res);
-    } catch (e) {
-      console.log(e);
-    }
+  const dispatch = useDispatch();
+
+  const handleLogin = values => {
+    login(values)
+      .then(res => {
+        if (res.data?.user?.access_token) {
+          const {name, username, access_token, refresh_token} = res.data.user;
+          dispatch(updateUser({name, username, token: access_token}));
+          setSecureValue('token', access_token);
+          setSecureValue('refresh_token', refresh_token);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
   return (
     <Layout>
       <ScrollView contentContainerStyle={styles.scrollview}>
         <View style={styles.container}>
-          {/* <View style={styles.formWrapper}> */}
           <Card style={styles.formWrapper}>
             <Formik
               initialValues={{username: '', password: ''}}
@@ -76,7 +87,6 @@ const Login = () => {
               )}
             </Formik>
           </Card>
-          {/* </View> */}
         </View>
       </ScrollView>
     </Layout>

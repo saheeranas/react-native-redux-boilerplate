@@ -14,10 +14,6 @@ const Demo = () => {
   };
 
   const handleLogin = async () => {
-    // login({username: 'hermione', password: '123456'}).then(res =>
-    //   console.log(res),
-    // );
-
     const body = {
       username: '',
       password: '',
@@ -26,9 +22,7 @@ const Demo = () => {
     try {
       let res = await login(body);
       // console.log(res.data);
-    } catch (e) {
-      // console.log(e);
-    }
+    } catch (e) {}
   };
   return (
     <View>

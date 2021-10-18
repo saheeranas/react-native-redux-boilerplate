@@ -5,7 +5,7 @@ import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
 
 import Demo from './app/screens/Demo';
-// import Login from './app/screens/auth/Login';
+import Login from './app/screens/auth/Login';
 // import Tasks from './app/screens/Tasks';
 // import Settings from './app/screens/Settings';
 // import NoInternet from './app/components/NoInternet';
@@ -18,8 +18,8 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider>
-          <Demo />
-          {/* <RootNavigation /> */}
+          {/* <Demo /> */}
+          <RootNavigation />
           {/* <NotFound /> */}
           {/* <NoInternet /> */}
           {/* <Login /> */}
