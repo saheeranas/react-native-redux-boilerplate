@@ -12,7 +12,7 @@ import {useDispatch} from 'react-redux';
 import {updateUser} from '../../store/userSlice';
 
 import {login} from '../../services';
-import {setSecureValue} from '../../utils/token';
+import {setSecureValue} from '../../utils/keyChain';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -23,7 +23,10 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const handleLogin = values => {
-    login(values)
+    // Add grant_type value to obj
+    let reqObj = Object.assign({}, values, {grant_type: 'password'});
+    // Service request
+    login(new URLSearchParams(reqObj))
       .then(res => {
         if (res.data?.user?.access_token) {
           const {name, username, access_token, refresh_token} = res.data.user;

@@ -11,7 +11,7 @@ import {
 
 import {useDispatch} from 'react-redux';
 import {clearUser} from '../store/userSlice';
-import {removeSecureValue} from '../utils/token';
+import {removeSecureValue} from '../utils/keyChain';
 
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
@@ -24,8 +24,10 @@ const Settings = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
+    // Remove both access token and refresh token from Local
     removeSecureValue('token');
     removeSecureValue('refresh_token');
+    // Remove access token from redux store
     dispatch(clearUser());
   };
 
