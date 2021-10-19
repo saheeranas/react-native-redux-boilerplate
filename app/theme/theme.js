@@ -24,6 +24,7 @@ const themes = {
     layoutBg: '#f0f0f0',
     cardBg: '#ffffff',
     accent: '#0071ff',
+    error: '#B00020',
   },
   dark: {
     name: 'dark',
@@ -31,6 +32,7 @@ const themes = {
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
     accent: '#0071ff',
+    error: '#B00020',
   },
 };
 

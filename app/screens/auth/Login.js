@@ -13,6 +13,7 @@ import {updateUser} from '../../store/userSlice';
 
 import {login} from '../../services';
 import {setSecureValue} from '../../utils/keyChain';
+import {transformToFormikErrors} from '../../utils/form';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -36,7 +37,10 @@ const Login = () => {
         }
       })
       .catch(e => {
-        console.log('handleLogin()', e);
+        if (e.response?.data?.errors) {
+          let result = transformToFormikErrors(e.response.data.errors);
+          setErrors(result);
+        }
       });
   };
 
