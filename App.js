@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 
 import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
+import {NoInternetToast} from './app/components/NoInternet';
 
 // import Demo from './app/screens/Demo';
 // import Login from './app/screens/auth/Login';
@@ -20,6 +21,7 @@ export default class App extends Component {
         <ThemeProvider>
           {/* <Demo /> */}
           <RootNavigation />
+          <NoInternetToast />
           {/* <NotFound /> */}
           {/* <NoInternet /> */}
           {/* <Login /> */}
