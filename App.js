@@ -6,9 +6,6 @@ import {ThemeProvider} from './app/theme/useTheme';
 import {NoInternetToast} from './app/components/NoInternet';
 
 // import Demo from './app/screens/Demo';
-// import Login from './app/screens/auth/Login';
-// import Tasks from './app/screens/Tasks';
-// import Settings from './app/screens/Settings';
 // import NoInternet from './app/components/NoInternet';
 // import NotFound from './app/components/NotFound';
 
@@ -22,16 +19,8 @@ export default class App extends Component {
           {/* <Demo /> */}
           <RootNavigation />
           <NoInternetToast />
-          {/* <NotFound /> */}
-          {/* <NoInternet /> */}
-          {/* <Login /> */}
-          {/* <Tasks /> */}
-          {/* <Settings /> */}
         </ThemeProvider>
       </Provider>
     );
   }
 }
-
-// For Toast, Use
-// https://github.com/arnnis/react-native-toast-notifications

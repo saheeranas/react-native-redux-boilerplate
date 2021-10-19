@@ -4,20 +4,24 @@ import {updateToken} from '../store/userSlice';
 import {store} from '../store/store';
 /**
  * Request ACCESS TOKEN using REFRESH TOKEN
+ * - ONLY request if there is refresh token present
  * - Accessing store directly since useDispatch doesn't work outside react component
  */
 export const requestNewToken = async () => {
   // 1. Get refresh token from keychain
   getSecureValue('refresh_token')
     // 2. Request a new access token
-    .then(rtoken =>
-      login(
+    .then(rtoken => {
+      if (!rtoken) {
+        throw new Error('Login Failed');
+      }
+      return login(
         new URLSearchParams({
           grant_type: 'refresh_token',
           refresh_token: rtoken,
         }),
-      ),
-    )
+      );
+    })
     // 3. Parsing new token from response
     .then(response => response.data.access_token)
     .then(acToken => {
@@ -26,5 +30,5 @@ export const requestNewToken = async () => {
       // 5. Save received token to redux store
       store.dispatch(updateToken({token: acToken}));
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log('requestNewToken()', err));
 };

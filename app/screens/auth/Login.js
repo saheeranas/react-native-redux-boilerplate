@@ -22,7 +22,7 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
   const dispatch = useDispatch();
 
-  const handleLogin = values => {
+  const handleLogin = (values, {setErrors}) => {
     // Add grant_type value to obj
     let reqObj = Object.assign({}, values, {grant_type: 'password'});
     // Service request
@@ -36,7 +36,7 @@ const Login = () => {
         }
       })
       .catch(e => {
-        console.log(e);
+        console.log('handleLogin()', e);
       });
   };
 
@@ -48,7 +48,7 @@ const Login = () => {
             <Formik
               initialValues={{username: '', password: ''}}
               validationSchema={LoginSchema}
-              onSubmit={values => handleLogin(values)}>
+              onSubmit={handleLogin}>
               {({
                 handleChange,
                 handleBlur,
