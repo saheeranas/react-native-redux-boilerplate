@@ -11,10 +11,7 @@ const Demo = () => {
   const token = useSelector(state => state.user.token);
 
   const getData = () => {
-    getNews().then(res => console.log(res));
-    // fetch(Base_URL)
-    //   .then(res => res.json())
-    //   .then(msg => console.log(msg));
+    // getNews().then(res => console.log(res));
   };
 
   const handleLogin = async () => {

@@ -11,7 +11,11 @@ A starter template for React Native.
 ## Features
 
 - Redux setup with Redux Toolkit.
+- Dark Mode
+- Navigation setup
+- Login wiring (optional)
 - Sample code included.
+- Secure Token storage.
 
 ## Dependencies
 
@@ -20,6 +24,8 @@ A starter template for React Native.
 - React Navigation v6
 - React Native Vector Icons
 - Formik & Yup
+- Axios
+- React Native Keychain
 
 ## Installation
 

@@ -33,9 +33,6 @@ const Settings = () => {
 
   return (
     <Layout>
-      {/* Header */}
-      <View style={[styles.header, {backgroundColor: theme.cardBg}]}></View>
-      {/* end Header */}
       <ScrollView
         style={[styles.contentContainer, {backgroundColor: theme.layoutBg}]}>
         <Card style={{backgroundColor: theme.cardBg}}>

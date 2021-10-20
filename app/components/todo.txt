@@ -1,2 +1,0 @@
-// For Toast, Use
-// https://github.com/arnnis/react-native-toast-notifications

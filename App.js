@@ -5,10 +5,7 @@ import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
 import {NoInternetToast} from './app/components/NoInternet';
 
-// import Demo from './app/screens/Demo';
-// import NoInternet from './app/components/NoInternet';
-// import NotFound from './app/components/NotFound';
-
+// Navigation
 import RootNavigation from './app/routes/RootNavigation';
 
 export default class App extends Component {
@@ -16,7 +13,6 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <ThemeProvider>
-          {/* <Demo /> */}
           <RootNavigation />
           <NoInternetToast />
         </ThemeProvider>
