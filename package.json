@@ -11,13 +11,16 @@
     "reverse": "adb -s emulator-5554 reverse tcp:4001 tcp:4001"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^6.0.2",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.23.0",
     "formik": "^2.2.9",
     "react": "17.0.2",
     "react-native": "0.66.0",
+    "react-native-keychain": "^8.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-vector-icons": "^8.1.0",

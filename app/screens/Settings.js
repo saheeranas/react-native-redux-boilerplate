@@ -9,6 +9,10 @@ import {
   Pressable,
 } from 'react-native';
 
+import {useDispatch} from 'react-redux';
+import {clearUser} from '../store/userSlice';
+import {removeSecureValue} from '../utils/keyChain';
+
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
@@ -17,12 +21,18 @@ const avatar = require('../assets/images/avatar.png');
 
 const Settings = () => {
   const {theme, toggleTheme} = useTheme();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    // Remove both access token and refresh token from Local
+    removeSecureValue('token');
+    removeSecureValue('refresh_token');
+    // Remove access token from redux store
+    dispatch(clearUser());
+  };
 
   return (
     <Layout>
-      {/* Header */}
-      <View style={[styles.header, {backgroundColor: theme.cardBg}]}></View>
-      {/* end Header */}
       <ScrollView
         style={[styles.contentContainer, {backgroundColor: theme.layoutBg}]}>
         <Card style={{backgroundColor: theme.cardBg}}>
@@ -58,7 +68,7 @@ const Settings = () => {
               onPress={() => console.log('here')}
             />
             <MenuItem label="About" onPress={() => console.log('here')} />
-            <MenuItem label="Logout" onPress={() => console.log('here')} />
+            <MenuItem label="Logout" onPress={handleLogout} />
           </>
         </Card>
       </ScrollView>

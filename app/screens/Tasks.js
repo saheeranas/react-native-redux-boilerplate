@@ -21,7 +21,7 @@ import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 
-const tickIcon = <Icon name="checkbox-outline" size={20} color="red" />;
+const clearIcon = <Icon name="ios-trash-bin-outline" size={16} color="red" />;
 
 const Tasks = props => {
   const {theme} = useTheme();
@@ -58,40 +58,37 @@ const Tasks = props => {
 
       <Card style={[styles.inputCard, {borderTopColor: theme.layoutBg}]}>
         {/* TextInput and InputButton starts here */}
-        <View style={styles.inputBtnWrapper}>
-          <TextInput
-            value={text}
-            placeholder="New Task"
-            placeholderTextColor={theme.color}
-            style={[
-              styles.input,
-              {color: theme.color, backgroundColor: theme.layoutBg},
+        <View style={styles.inputBtnRow}>
+          <Pressable
+            style={({pressed}) => [
+              styles.btnClear,
+              {backgroundColor: pressed ? '#c50e29' : 'transparent'},
             ]}
-            onChangeText={text => setText(text)}
-          />
-          <Pressable onPress={() => addNewTask()} style={styles.btnAdd}>
-            <Text style={styles.btnAddText}>ADD</Text>
+            // style={styles.btnClear}
+            onPress={() => dispatch(completedTodosCleared())}>
+            {({pressed}) => (
+              <Icon
+                name="trash-bin"
+                size={16}
+                color={pressed ? '#fff' : '#c50e29'}
+              />
+            )}
           </Pressable>
+          <View style={styles.inputBtnWrp}>
+            <TextInput
+              value={text}
+              placeholder="New Task"
+              placeholderTextColor={theme.color}
+              style={[
+                styles.input,
+                {color: theme.color, backgroundColor: theme.layoutBg},
+              ]}
+              onChangeText={text => setText(text)}
+              onSubmitEditing={() => addNewTask()}
+            />
+          </View>
         </View>
         {/* TextInput and InputButton ends here */}
-
-        <Pressable
-          style={({pressed}) => [
-            styles.btnClear,
-            {backgroundColor: pressed ? '#c50e29' : 'transparent'},
-          ]}
-          // style={styles.btnClear}
-          onPress={() => dispatch(completedTodosCleared())}>
-          {({pressed}) => (
-            <Text
-              style={[
-                styles.btnClearText,
-                {color: pressed ? '#fff' : '#c50e29'},
-              ]}>
-              Clear completed
-            </Text>
-          )}
-        </Pressable>
       </Card>
     </Layout>
   );
@@ -166,19 +163,26 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-
     elevation: 4,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
   },
 
-  inputBtnWrapper: {
+  inputBtnRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  inputBtnWrp: {
+    flexDirection: 'row',
+    flex: 1,
   },
 
   input: {
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#f0f0f0',
-    flex: 0.72,
+    flex: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
     fontSize: 14,
@@ -189,11 +193,14 @@ const styles = StyleSheet.create({
   btnAdd: {
     borderRadius: 20,
     padding: 6,
-    flex: 0.25,
+    flex: 0.3,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0071ff',
     color: '#fff',
+    height: 38,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
   },
 
   btnAddText: {
@@ -204,12 +211,12 @@ const styles = StyleSheet.create({
   btnClear: {
     borderRadius: 20,
     paddingVertical: 5,
-    paddingHorizontal: 10,
-    marginTop: 10,
+    paddingHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#c50e29',
+    marginRight: 8,
   },
 
   btnClearText: {

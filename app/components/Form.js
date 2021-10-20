@@ -9,10 +9,16 @@ const Input = props => {
   return (
     <View style={styles.inputWrp}>
       <TextInput
-        style={[styles.input, {color: theme.textColor}, {...props.style}]}
+        style={[
+          styles.input,
+          {color: theme.textColor, borderColor: theme.layoutBg},
+          {...props.style},
+        ]}
         {...props}
       />
-      {props.error ? <Text style={styles.error}>{props.error}</Text> : null}
+      {props.error ? (
+        <Text style={[styles.error, {color: theme.error}]}>{props.error}</Text>
+      ) : null}
     </View>
   );
 };
@@ -21,18 +27,15 @@ export {Input};
 
 const styles = StyleSheet.create({
   inputWrp: {
-    marginBottom: spacing.cardMarginB + 3,
-    position: 'relative',
+    marginBottom: spacing.cardMarginB,
   },
   input: {
     height: 45,
-    borderColor: '#ccc',
+    borderColor: '#000000',
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: spacing.borderRadius,
   },
   error: {
     fontSize: typeSizes.FONT_SIZE_SMALL,
-    position: 'absolute',
-    bottom: -15,
   },
 });

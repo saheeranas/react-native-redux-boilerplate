@@ -3,12 +3,9 @@ import {Provider} from 'react-redux';
 
 import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
+import {NoInternetToast} from './app/components/NoInternet';
 
-import Login from './app/screens/auth/Login';
-import Tasks from './app/screens/Tasks';
-import Settings from './app/screens/Settings';
-import Demo from './app/screens/Demo';
-
+// Navigation
 import RootNavigation from './app/routes/RootNavigation';
 
 export default class App extends Component {
@@ -17,15 +14,9 @@ export default class App extends Component {
       <Provider store={store}>
         <ThemeProvider>
           <RootNavigation />
-          {/* <Login /> */}
-          {/* <Tasks /> */}
-          {/* <Settings /> */}
-          {/* <Demo /> */}
+          <NoInternetToast />
         </ThemeProvider>
       </Provider>
     );
   }
 }
-
-// For Toast, Use
-// https://github.com/arnnis/react-native-toast-notifications
