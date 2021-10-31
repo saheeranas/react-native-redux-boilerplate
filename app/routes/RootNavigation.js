@@ -61,7 +61,7 @@ export default function RootNavigation() {
       />
       <NavigationContainer>
         {/* {user.token ? ( */}
-        <Tab.Navigator
+        {/* <Tab.Navigator
           screenOptions={{
             tabBarStyle: {backgroundColor: theme.cardBg},
             tabBarInactiveTintColor: theme.color,
@@ -85,15 +85,15 @@ export default function RootNavigation() {
               tabBarIcon: settingsIcon,
             }}
           />
-        </Tab.Navigator>
-        {/* ) : (
-          <Stack.Navigator
-            screenOptions={{
-              headerShown: false,
-            }}>
-            <Stack.Screen name="Login" component={Login} />
-          </Stack.Navigator>
-        )} */}
+        </Tab.Navigator> */}
+        {/* ) : ( */}
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="Login" component={Login} />
+        </Stack.Navigator>
+        {/* )} */}
       </NavigationContainer>
     </SafeAreaView>
   );
