@@ -4,7 +4,7 @@
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
 import React, {useEffect} from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -20,6 +20,7 @@ import {getSecureValue} from '../utils/token';
 import {updateToken} from '../store/userSlice';
 
 // Screens
+// eslint-disable-next-line no-unused-vars
 import Login from '../screens/auth/Login';
 import Tasks from '../screens/Tasks';
 import Settings from '../screens/Settings';
@@ -33,12 +34,14 @@ const settingsIcon = ({color}) => (
 );
 
 // Root Navigation
+// eslint-disable-next-line no-unused-vars
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function RootNavigation() {
   const {theme} = useTheme();
   const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
   const user = useSelector(state => state.user);
 
   // Copy existing token from local storage to redux store
@@ -53,7 +56,7 @@ export default function RootNavigation() {
   }, [dispatch]);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         animated
         backgroundColor={theme.accent}
@@ -61,7 +64,7 @@ export default function RootNavigation() {
       />
       <NavigationContainer>
         {/* {user.token ? ( */}
-        {/* <Tab.Navigator
+        <Tab.Navigator
           screenOptions={{
             tabBarStyle: {backgroundColor: theme.cardBg},
             tabBarInactiveTintColor: theme.color,
@@ -85,16 +88,20 @@ export default function RootNavigation() {
               tabBarIcon: settingsIcon,
             }}
           />
-        </Tab.Navigator> */}
-        {/* ) : ( */}
+        </Tab.Navigator>
+        {/* ) : (
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
           }}>
           <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
-        {/* )} */}
+        )} */}
       </NavigationContainer>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {flex: 1},
+});

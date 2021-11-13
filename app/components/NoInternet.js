@@ -2,7 +2,7 @@
  * TODO: Need to wire with netinfo library to automatically show messages.
  */
 
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import {useNetInfo} from '@react-native-community/netinfo';
 
@@ -19,9 +19,7 @@ const NoInternet = () => {
     return (
       <Layout style={styles.layout}>
         <View style={styles.content}>
-          <Text style={{color: theme.color, marginBottom: 10}}>
-            No Internet
-          </Text>
+          <Text style={[styles.title, {color: theme.color}]}>No Internet</Text>
           <Text style={{color: theme.color}}>Please check your connection</Text>
         </View>
       </Layout>
@@ -52,6 +50,9 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: 'center',
+  },
+  title: {
+    marginBottom: 10,
   },
   offlineContainer: {
     backgroundColor: '#d70015',

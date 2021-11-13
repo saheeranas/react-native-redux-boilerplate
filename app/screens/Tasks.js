@@ -6,7 +6,6 @@ import {
   Text,
   TextInput,
   Pressable,
-  TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -21,8 +20,6 @@ import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 
-const clearIcon = <Icon name="ios-trash-bin-outline" size={16} color="red" />;
-
 const Tasks = props => {
   const {theme} = useTheme();
 
@@ -34,8 +31,9 @@ const Tasks = props => {
 
   const addNewTask = () => {
     let temp = text.trim();
-    if (temp !== '')
+    if (temp !== '') {
       dispatch(todoAdded({id: Date.now(), title: temp, done: false}));
+    }
     setText('');
   };
 
@@ -83,7 +81,7 @@ const Tasks = props => {
                 styles.input,
                 {color: theme.color, backgroundColor: theme.layoutBg},
               ]}
-              onChangeText={text => setText(text)}
+              onChangeText={t => setText(t)}
               onSubmitEditing={() => addNewTask()}
             />
           </View>
@@ -98,13 +96,15 @@ const Tasks = props => {
 export const ListItem = ({item, index, onPress}) => {
   const {theme} = useTheme();
   return (
-    <Card style={{marginBottom: 10}}>
+    <Card style={styles.card}>
       <Pressable
+        // eslint-disable-next-line react-native/no-inline-styles
         style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
         onPress={() => onPress()}>
         <Text
           style={[
             styles.title,
+            // eslint-disable-next-line react-native/no-inline-styles
             {
               color: theme.color,
               textDecorationLine: item.done ? 'line-through' : 'none',
@@ -135,6 +135,10 @@ const styles = StyleSheet.create({
   flatList: {
     paddingHorizontal: 12,
     paddingVertical: 16,
+  },
+
+  card: {
+    marginBottom: 10,
   },
 
   row: {
