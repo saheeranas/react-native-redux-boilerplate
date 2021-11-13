@@ -9,12 +9,12 @@ const Input = props => {
   return (
     <View style={styles.inputWrp}>
       <TextInput
+        {...props}
         style={[
           styles.input,
           {color: theme.textColor, borderColor: theme.layoutBg},
           {...props.style},
         ]}
-        {...props}
       />
       {props.error ? (
         <Text style={[styles.error, {color: theme.error}]}>{props.error}</Text>

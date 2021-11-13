@@ -2,9 +2,11 @@ import React from 'react';
 import {Text, View, Button} from 'react-native';
 import {useSelector} from 'react-redux';
 
+// eslint-disable-next-line no-unused-vars
 import {getNews, login} from '../services';
 import {requestNewToken} from '../utils/token';
 
+// eslint-disable-next-line no-unused-vars
 const Base_URL = 'http://10.0.2.2:4001/';
 
 const Demo = () => {
@@ -21,6 +23,7 @@ const Demo = () => {
     };
 
     try {
+      // eslint-disable-next-line no-unused-vars
       let res = await login(body);
       // console.log(res.data);
     } catch (e) {}

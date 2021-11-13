@@ -13,8 +13,8 @@ const get = route => {
 // Base function for POST requests
 const post = async (route, {body, type = '', user = {}}) => {
   let headers = {Accept: 'application/json'};
-  if (user['token']) {
-    headers['Authorization'] = `Bearer ${user['token']}`;
+  if (user.token) {
+    headers.Authorization = `Bearer ${user.token}`;
   }
   if (type !== '') {
     headers['Content-Type'] = contentTypes[type];

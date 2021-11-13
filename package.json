@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "watch": "jest --watchAll",
     "lint": "eslint .",
     "reverse": "adb -s emulator-5554 reverse tcp:4001 tcp:4001"
   },
@@ -19,7 +20,7 @@
     "axios": "^0.23.0",
     "formik": "^2.2.9",
     "react": "17.0.2",
-    "react-native": "0.66.0",
+    "react-native": "0.66.3",
     "react-native-keychain": "^8.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
@@ -31,6 +32,8 @@
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
+    "@testing-library/jest-native": "^4.0.2",
+    "@testing-library/react-native": "^8.0.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
@@ -38,8 +41,5 @@
     "react-native-codegen": "^0.0.7",
     "react-test-renderer": "17.0.2",
     "redux-logger": "^3.0.6"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }

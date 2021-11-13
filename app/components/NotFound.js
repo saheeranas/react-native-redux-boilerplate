@@ -12,7 +12,7 @@ const NotFound = ({
   return (
     <Layout style={styles.layout}>
       <View style={styles.content}>
-        <Text style={{color: theme.color, marginBottom: 10}}>{title}</Text>
+        <Text style={[styles.title, {color: theme.color}]}>{title}</Text>
         <Text style={{color: theme.color}}>{message}</Text>
       </View>
     </Layout>
@@ -28,5 +28,8 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: 'center',
+  },
+  title: {
+    marginBottom: 10,
   },
 });

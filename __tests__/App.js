@@ -2,7 +2,7 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
-
+jest.useFakeTimers();
 import 'react-native';
 import React from 'react';
 import App from '../App';

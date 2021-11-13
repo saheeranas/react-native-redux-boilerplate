@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Button, Image, ScrollView, Text} from 'react-native';
+import {StyleSheet, View, Button, Image, ScrollView} from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
@@ -16,8 +16,8 @@ import {setSecureValue} from '../../utils/keyChain';
 import {transformToFormikErrors} from '../../utils/form';
 
 const LoginSchema = Yup.object().shape({
-  username: Yup.string().min(2, 'Too Short!').required('Required'),
-  password: Yup.string().min(2, 'Too Short!').required('Required'),
+  username: Yup.string().min(5, 'Too Short!').required('Required'),
+  password: Yup.string().min(5, 'Too Short!').required('Required'),
 });
 
 const Login = () => {
@@ -66,6 +66,7 @@ const Login = () => {
                     <Image source={AppIcon} style={styles.appIcon} />
                   </View>
                   <Input
+                    testID="Login.Username"
                     placeholder="Username/Email"
                     onChangeText={handleChange('username')}
                     onBlur={handleBlur('username')}
@@ -78,6 +79,7 @@ const Login = () => {
                     }
                   />
                   <Input
+                    testID="Login.Password"
                     placeholder="Password"
                     onChangeText={handleChange('password')}
                     onBlur={handleBlur('password')}
@@ -89,7 +91,11 @@ const Login = () => {
                         : null
                     }
                   />
-                  <Button title="Login" onPress={handleSubmit} />
+                  <Button
+                    title="Login"
+                    onPress={handleSubmit}
+                    testID="Login.Button"
+                  />
                 </>
               )}
             </Formik>
