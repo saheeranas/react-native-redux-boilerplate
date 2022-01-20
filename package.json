@@ -20,7 +20,7 @@
     "axios": "^0.23.0",
     "formik": "^2.2.9",
     "react": "17.0.2",
-    "react-native": "0.66.3",
+    "react-native": "0.67.0",
     "react-native-keychain": "^8.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
