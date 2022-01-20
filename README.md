@@ -8,18 +8,22 @@
 
 A starter template for React Native.
 
+<kbd>
+  <img src="demo/assets/ss1.png?raw=true"> 
+</kbd>
+
 ## Features
 
 - Redux setup with Redux Toolkit.
 - Dark Mode
 - Navigation setup
 - Login wiring (optional)
-- Sample code included.
+- Sample code (To Do App) included.
 - Secure Token storage.
 
 ## Dependencies
 
-- React Native **v0.66.0**
+- React Native **v0.67.0**
 - Redux Toolkit (RTK) v1.6.2
 - React Navigation v6
 - React Native Vector Icons
@@ -32,7 +36,7 @@ A starter template for React Native.
 Clone this repo
 
 ```
-git clone https://github.com/saheeranas/react-native-redux-boilerplate.git`
+git clone https://github.com/saheeranas/react-native-redux-boilerplate.git
 ```
 
 Open project folder and install dependencies
