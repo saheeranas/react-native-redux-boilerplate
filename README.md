@@ -9,7 +9,7 @@
 A starter template for React Native.
 
 <kbd>
-  <img src="demo/assets/ss1.png?raw=true"> 
+  <img src="demo/assets/react-native-redux-boilerplate-saheer-anas.png?raw=true"> 
 </kbd>
 
 ## Features
