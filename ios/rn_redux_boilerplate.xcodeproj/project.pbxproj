@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* rn_redux_boilerplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rn_redux_boilerplateTests.m */; };
+		048A58266FE9246266073A78 /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E26E3EE7741BF6D4730BA2D /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7062A1363093D3B60DEA03CC /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A1A07F5D1FB9A2CABE84E0 /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8DB7059CAED531BC45B2821C /* libPods-rn_redux_boilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E19224237E7373080224C8 /* libPods-rn_redux_boilerplate.a */; };
+		83FEF472C7F3A3A9CA508E2A /* libPods-rn_redux_boilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF848C3884B4EB17A0BAB016 /* libPods-rn_redux_boilerplate.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rn_redux_boilerplate/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rn_redux_boilerplate/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rn_redux_boilerplate/main.m; sourceTree = "<group>"; };
-		17FDFE888919B4800C6E9CD0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2D0BC8E9BA548E37936D9A89 /* Pods-rn_redux_boilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate.debug.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate.debug.xcconfig"; sourceTree = "<group>"; };
-		4BD03B93E8FA2C683B7D5B2A /* Pods-rn_redux_boilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate.release.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate.release.xcconfig"; sourceTree = "<group>"; };
+		21C5BA99192EB288DDD7C608 /* Pods-rn_redux_boilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate.debug.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate.debug.xcconfig"; sourceTree = "<group>"; };
+		50EE55E9644128B0D73D4E6C /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		679AA93A98FBF9D03F836B1F /* Pods-rn_redux_boilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate.release.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate.release.xcconfig"; sourceTree = "<group>"; };
+		6BD601B2DF1E5C633D0272B0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E26E3EE7741BF6D4730BA2D /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rn_redux_boilerplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B3E19224237E7373080224C8 /* libPods-rn_redux_boilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rn_redux_boilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9DEC2F3649549BDF9392113 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
-		D6A1A07F5D1FB9A2CABE84E0 /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF848C3884B4EB17A0BAB016 /* libPods-rn_redux_boilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rn_redux_boilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7062A1363093D3B60DEA03CC /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a in Frameworks */,
+				048A58266FE9246266073A78 /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB7059CAED531BC45B2821C /* libPods-rn_redux_boilerplate.a in Frameworks */,
+				83FEF472C7F3A3A9CA508E2A /* libPods-rn_redux_boilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +100,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				B3E19224237E7373080224C8 /* libPods-rn_redux_boilerplate.a */,
-				D6A1A07F5D1FB9A2CABE84E0 /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */,
+				CF848C3884B4EB17A0BAB016 /* libPods-rn_redux_boilerplate.a */,
+				6E26E3EE7741BF6D4730BA2D /* libPods-rn_redux_boilerplate-rn_redux_boilerplateTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DBC02B5314106D4FD25D9D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21C5BA99192EB288DDD7C608 /* Pods-rn_redux_boilerplate.debug.xcconfig */,
+				679AA93A98FBF9D03F836B1F /* Pods-rn_redux_boilerplate.release.xcconfig */,
+				50EE55E9644128B0D73D4E6C /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */,
+				6BD601B2DF1E5C633D0272B0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -121,7 +133,7 @@
 				00E356EF1AD99517003FC87E /* rn_redux_boilerplateTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				AF3BA26A5EE6DF77FC4F7337 /* Pods */,
+				2DBC02B5314106D4FD25D9D1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,18 +149,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF3BA26A5EE6DF77FC4F7337 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2D0BC8E9BA548E37936D9A89 /* Pods-rn_redux_boilerplate.debug.xcconfig */,
-				4BD03B93E8FA2C683B7D5B2A /* Pods-rn_redux_boilerplate.release.xcconfig */,
-				17FDFE888919B4800C6E9CD0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */,
-				C9DEC2F3649549BDF9392113 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,12 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "rn_redux_boilerplateTests" */;
 			buildPhases = (
-				C36D14B953E882AB906A3AD8 /* [CP] Check Pods Manifest.lock */,
+				CFDF19CD526ACDA849D962DB /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				9623919F4428709EA7613245 /* [CP] Embed Pods Frameworks */,
-				676AD0923D724D701E8458E2 /* [CP] Copy Pods Resources */,
+				5543B7DF039E1D7447949C97 /* [CP] Embed Pods Frameworks */,
+				95435992F677B52E41C469B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +177,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "rn_redux_boilerplate" */;
 			buildPhases = (
-				10C7B06101BFF700F7EF003A /* [CP] Check Pods Manifest.lock */,
+				127475581DAF868DC7A86EF3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				CF985EC64B9D34646D8A81D1 /* [CP] Embed Pods Frameworks */,
-				C1B671753147AC972F9CD65F /* [CP] Copy Pods Resources */,
+				B09242573632DBAF260EB434 /* [CP] Embed Pods Frameworks */,
+				B563FD72BFB7AEF4D5A1701B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,7 +265,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		10C7B06101BFF700F7EF003A /* [CP] Check Pods Manifest.lock */ = {
+		127475581DAF868DC7A86EF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,24 +287,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		676AD0923D724D701E8458E2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9623919F4428709EA7613245 /* [CP] Embed Pods Frameworks */ = {
+		5543B7DF039E1D7447949C97 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,7 +304,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1B671753147AC972F9CD65F /* [CP] Copy Pods Resources */ = {
+		95435992F677B52E41C469B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests/Pods-rn_redux_boilerplate-rn_redux_boilerplateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B09242573632DBAF260EB434 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B563FD72BFB7AEF4D5A1701B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,7 +355,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C36D14B953E882AB906A3AD8 /* [CP] Check Pods Manifest.lock */ = {
+		CFDF19CD526ACDA849D962DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,23 +375,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF985EC64B9D34646D8A81D1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rn_redux_boilerplate/Pods-rn_redux_boilerplate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,7 +429,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FDFE888919B4800C6E9CD0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */;
+			baseConfigurationReference = 50EE55E9644128B0D73D4E6C /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -456,7 +456,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9DEC2F3649549BDF9392113 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */;
+			baseConfigurationReference = 6BD601B2DF1E5C633D0272B0 /* Pods-rn_redux_boilerplate-rn_redux_boilerplateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -480,7 +480,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D0BC8E9BA548E37936D9A89 /* Pods-rn_redux_boilerplate.debug.xcconfig */;
+			baseConfigurationReference = 21C5BA99192EB288DDD7C608 /* Pods-rn_redux_boilerplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BD03B93E8FA2C683B7D5B2A /* Pods-rn_redux_boilerplate.release.xcconfig */;
+			baseConfigurationReference = 679AA93A98FBF9D03F836B1F /* Pods-rn_redux_boilerplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
