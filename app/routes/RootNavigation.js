@@ -69,7 +69,6 @@ export default function RootNavigation() {
             tabBarStyle: {backgroundColor: theme.cardBg},
             tabBarInactiveTintColor: theme.color,
             tabBarActiveTintColor: theme.accent,
-            tabBarShowLabel: false,
             headerStyle: {backgroundColor: theme.cardBg, height: 50},
             headerTitleStyle: {color: theme.color, fontSize: 16},
           }}>
