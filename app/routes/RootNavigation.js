@@ -71,7 +71,8 @@ export default function RootNavigation() {
             tabBarActiveTintColor: theme.accent,
             headerStyle: {backgroundColor: theme.cardBg, height: 50},
             headerTitleStyle: {color: theme.color, fontSize: 16},
-          }}>
+          }}
+        >
           <Tab.Screen
             name="To Do"
             component={Tasks}
