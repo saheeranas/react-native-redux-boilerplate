@@ -1,10 +1,10 @@
 import {ReactNode} from 'react';
-import {ViewStyle} from 'react-native';
+import {ViewStyle, StyleProp} from 'react-native';
 
 // Layout
 export interface LayoutPropsType {
   children: ReactNode;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }
 
 // MenuItem
@@ -12,4 +12,16 @@ export interface MenuItemPropsType {
   label: string;
   rightItem?: ReactNode;
   onPress: () => void;
+}
+
+// Card
+export interface CardPropsType {
+  children: ReactNode;
+  style?: StyleProp<ViewStyle>;
+}
+
+// Input
+export interface InputPropsType {
+  style?: ViewStyle;
+  error?: string;
 }
