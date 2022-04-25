@@ -6,3 +6,10 @@ export interface LayoutPropsType {
   children: ReactNode;
   style?: ViewStyle;
 }
+
+// MenuItem
+export interface MenuItemPropsType {
+  label: string;
+  rightItem?: ReactNode;
+  onPress: () => void;
+}

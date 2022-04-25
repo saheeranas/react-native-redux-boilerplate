@@ -9,7 +9,7 @@ import {themes, themeType} from './theme';
 
 // Types
 export interface ThemeContextInterface {
-  theme: themeType | null;
+  theme: themeType;
   setTheme: (value: themeType) => void;
 }
 
