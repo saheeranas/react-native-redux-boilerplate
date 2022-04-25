@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  StyleSheet,
-  FlatList,
-  View,
-  Text,
-  TextInput,
-  Pressable,
-} from 'react-native';
+import {StyleSheet, FlatList, View, TextInput, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {useSelector, useDispatch} from 'react-redux';
@@ -15,15 +8,17 @@ import {
   todoToggled,
   completedTodosCleared,
 } from '../store/tasksSlice';
+import {RootState} from '../store/store';
 
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
+import ListItem from '../components/ListItem';
 
-const Tasks = props => {
+const Tasks = () => {
   const {theme} = useTheme();
 
-  const todoList = useSelector(state => state.todos.entities);
+  const todoList = useSelector((state: RootState) => state.todos.entities);
   // const loadingStatus = useSelector((state) => state.todos.status);
   const dispatch = useDispatch();
 
@@ -54,7 +49,7 @@ const Tasks = props => {
       />
       {/* Tasks Listing ends here */}
 
-      <Card style={[styles.inputCard, {borderTopColor: theme.layoutBg}]}>
+      <Card style={[styles.inputCard, {borderTopColor: theme?.layoutBg}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
           <Pressable
@@ -76,10 +71,10 @@ const Tasks = props => {
             <TextInput
               value={text}
               placeholder="New Task"
-              placeholderTextColor={theme.color}
+              placeholderTextColor={theme?.color}
               style={[
                 styles.input,
-                {color: theme.color, backgroundColor: theme.layoutBg},
+                {color: theme?.color, backgroundColor: theme?.layoutBg},
               ]}
               onChangeText={t => setText(t)}
               onSubmitEditing={() => addNewTask()}
@@ -92,36 +87,6 @@ const Tasks = props => {
   );
 };
 
-// List Item component
-export const ListItem = ({item, index, onPress}) => {
-  const {theme} = useTheme();
-  return (
-    <Card style={styles.card}>
-      <Pressable
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
-        onPress={() => onPress()}>
-        <Text
-          style={[
-            styles.title,
-            // eslint-disable-next-line react-native/no-inline-styles
-            {
-              color: theme.color,
-              textDecorationLine: item.done ? 'line-through' : 'none',
-            },
-          ]}>
-          {item.title}
-        </Text>
-        <Icon
-          name="checkbox-outline"
-          size={20}
-          color={item.done ? '#00d258' : 'gray'}
-        />
-      </Pressable>
-    </Card>
-  );
-};
-
 export default Tasks;
 
 const styles = StyleSheet.create({
@@ -131,33 +96,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-
   flatList: {
     paddingHorizontal: 12,
     paddingVertical: 16,
   },
-
-  card: {
-    marginBottom: 10,
-  },
-
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-
-  title: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#4d505b',
-  },
-
   tickIcon: {
     width: 22,
     height: 22,
   },
-
   inputCard: {
     borderTopWidth: 1,
     shadowColor: '#000',
@@ -171,18 +117,15 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
   },
-
   inputBtnRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-
   inputBtnWrp: {
     flexDirection: 'row',
     flex: 1,
   },
-
   input: {
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#f0f0f0',
@@ -193,7 +136,6 @@ const styles = StyleSheet.create({
     height: 38,
     backgroundColor: '#f6f6f6',
   },
-
   btnAdd: {
     borderRadius: 20,
     padding: 6,
@@ -206,12 +148,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
   },
-
   btnAddText: {
     color: '#fff',
     fontSize: 14,
   },
-
   btnClear: {
     borderRadius: 20,
     paddingVertical: 5,
@@ -222,7 +162,6 @@ const styles = StyleSheet.create({
     borderColor: '#c50e29',
     marginRight: 8,
   },
-
   btnClearText: {
     color: '#c50e29',
     fontSize: 14,

@@ -1,6 +1,5 @@
 /**
- * For Dark/Light Mode
- * @exports ThemeContext, ThemeProvider, useTheme
+ * Dark/Light Mode
  */
 
 import * as React from 'react';
@@ -9,7 +8,7 @@ import * as React from 'react';
 import {themes, themeType} from './theme';
 
 // Types
-interface ThemeContextInterface {
+export interface ThemeContextInterface {
   theme: themeType | null;
   setTheme: (value: themeType) => void;
 }

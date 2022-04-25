@@ -29,16 +29,13 @@ const todosSlice = createSlice({
       const todo = state.entities.find(e => e.id === todoId);
       todo.done = !todo.done;
     },
-    completedTodosCleared(state, action) {
+    completedTodosCleared(state) {
       state.entities = state.entities.filter(todo => !todo.done);
     },
   },
 });
 
-export const {
-  todoAdded,
-  todoToggled,
-  completedTodosCleared,
-} = todosSlice.actions;
+export const {todoAdded, todoToggled, completedTodosCleared} =
+  todosSlice.actions;
 
 export default todosSlice.reducer;
