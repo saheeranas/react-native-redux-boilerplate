@@ -1,5 +1,5 @@
 // test-utils.js
-import React from 'react';
+import * as React from 'react';
 import {render} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
 import {store} from '../store/store';
