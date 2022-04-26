@@ -80,9 +80,7 @@ const Login = () => {
                     value={values.username}
                     keyboardType="email-address"
                     error={
-                      errors.username && touched.username
-                        ? errors.username
-                        : null
+                      errors.username && touched.username ? errors.username : ''
                     }
                   />
                   <Input
@@ -93,9 +91,7 @@ const Login = () => {
                     value={values.password}
                     secureTextEntry
                     error={
-                      errors.password && touched.password
-                        ? errors.password
-                        : null
+                      errors.password && touched.password ? errors.password : ''
                     }
                   />
                   <Button

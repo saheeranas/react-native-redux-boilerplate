@@ -1,5 +1,5 @@
 import {ReactNode} from 'react';
-import {ViewStyle, StyleProp} from 'react-native';
+import {ViewStyle, StyleProp, TextInputProps} from 'react-native';
 
 // Layout
 export interface LayoutPropsType {
@@ -21,7 +21,8 @@ export interface CardPropsType {
 }
 
 // Input
-export interface InputPropsType {
+export interface InputPropsType extends TextInputProps {
+  testID?: string;
   style?: ViewStyle;
   error?: string;
 }
