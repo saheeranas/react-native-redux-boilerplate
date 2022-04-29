@@ -1,5 +1,5 @@
 import {NativeModules} from 'react-native';
-import jest from 'jest-mock';
+// import jest from 'jest-mock';
 
 NativeModules.RNCNetInfo = {
   getCurrentState: jest.fn(() => Promise.resolve()),
@@ -7,4 +7,4 @@ NativeModules.RNCNetInfo = {
   removeListeners: jest.fn(),
 };
 
-// jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');

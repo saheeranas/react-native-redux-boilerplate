@@ -10,9 +10,10 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
+    "module": "commonjs",
     "skipLibCheck": true,
-    "noImplicitAny": false,
-    "baseUrl": "./"
+    "noImplicitAny": false
+    // "baseUrl": "./"
   },
   "exclude": [
     "node_modules",
