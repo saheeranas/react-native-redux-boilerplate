@@ -9,7 +9,10 @@
     "test": "jest",
     "watch": "jest --watchAll",
     "lint": "eslint .",
-    "reverse": "adb -s emulator-5554 reverse tcp:4001 tcp:4001"
+    "reverse": "adb -s emulator-5554 reverse tcp:4001 tcp:4001",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
+    "release-android": "cd android && ./gradlew clean && cd .. && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle && cd android && ./gradlew assembleRelease && cd ..",
+    "adb-log": "adb logcat *:E"
   },
   "dependencies": {
     "@react-native-community/netinfo": "^8.1.0",
