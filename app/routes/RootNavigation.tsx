@@ -7,7 +7,7 @@ import React, {useEffect} from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSelector, useDispatch} from 'react-redux';
@@ -15,13 +15,15 @@ import {useSelector, useDispatch} from 'react-redux';
 // Hook for theme change (Light/Dark Mode)
 import {useTheme} from '../theme/useTheme';
 // Get Value from Keyring (Encrypted token)
-import {getSecureValue} from '../utils/token';
+import {getSecureValue} from '../utils/keyChain';
 // Redux slice for updating Access Token to store
 import {updateToken} from '../store/userSlice';
 
+import {RootState} from '../store/store';
+
 // Screens
 // eslint-disable-next-line no-unused-vars
-import Login from '../screens/auth/Login';
+// import Login from '../screens/auth/Login';
 import Tasks from '../screens/Tasks';
 import Settings from '../screens/Settings';
 
@@ -35,14 +37,14 @@ const settingsIcon = ({color}) => (
 
 // Root Navigation
 // eslint-disable-next-line no-unused-vars
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function RootNavigation() {
   const {theme} = useTheme();
   const dispatch = useDispatch();
   // eslint-disable-next-line no-unused-vars
-  const user = useSelector(state => state.user);
+  const user = useSelector((state: RootState) => state.user);
 
   // Copy existing token from local storage to redux store
   useEffect(() => {
@@ -71,8 +73,7 @@ export default function RootNavigation() {
             tabBarActiveTintColor: theme.accent,
             headerStyle: {backgroundColor: theme.cardBg, height: 50},
             headerTitleStyle: {color: theme.color, fontSize: 16},
-          }}
-        >
+          }}>
           <Tab.Screen
             name="To Do"
             component={Tasks}

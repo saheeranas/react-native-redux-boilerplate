@@ -1,5 +1,36 @@
+// Types
+interface spacingType {
+  borderRadius: number;
+  layoutPaddingH: number;
+  containerPaddingV: number;
+  cardMarginB: number;
+}
+
+interface typeSizesType {
+  FONT_SIZE_SMALL: number;
+  FONT_SIZE_MEDIUM: number;
+  FONT_SIZE_LARGE: number;
+  FONT_WEIGHT_LIGHT: number;
+  FONT_WEIGHT_MEDIUM: number;
+  FONT_WEIGHT_HEAVY: number;
+}
+
+export interface themeType {
+  name: string;
+  color: string;
+  layoutBg: string;
+  cardBg: string;
+  accent: string;
+  error: string;
+}
+
+interface themesType {
+  light: themeType;
+  dark: themeType;
+}
+
 // Spacing:- Common margins and paddings
-const spacing = {
+const spacing: spacingType = {
   borderRadius: 8,
   layoutPaddingH: 16,
   containerPaddingV: 10,
@@ -7,7 +38,7 @@ const spacing = {
 };
 
 // Type Sizes:- Font sizes and weights
-const typeSizes = {
+const typeSizes: typeSizesType = {
   FONT_SIZE_SMALL: 12,
   FONT_SIZE_MEDIUM: 14,
   FONT_SIZE_LARGE: 16,
@@ -17,7 +48,7 @@ const typeSizes = {
 };
 
 // Themes:- Can alter values here. Can only be consumed through Context (see useTheme.js file)
-const themes = {
+const themes: themesType = {
   light: {
     name: 'light',
     color: 'rgb(58, 58, 60)',

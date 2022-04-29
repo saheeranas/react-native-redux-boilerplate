@@ -4,9 +4,9 @@
   Author: saheeranas
   -->
 
-# React Native Redux starter template with Redux Toolkit (RTK)
+# React Native Redux boilerplate with Redux Toolkit (RTK) and TypeScript.
 
-A starter template for React Native.
+A React Native starter template.
 
 <kbd>
   <img src="demo/assets/react-native-redux-boilerplate-saheer-anas.png?raw=true"> 
@@ -23,8 +23,9 @@ A starter template for React Native.
 
 ## Dependencies
 
-- React Native **v0.68.0**
+- React Native **v0.68.1**
 - Redux Toolkit (RTK) v1.8.0
+- TypeScript
 - React Navigation v6
 - React Native Vector Icons
 - Formik & Yup

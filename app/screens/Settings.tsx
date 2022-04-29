@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  Switch,
-  Image,
-  Pressable,
-} from 'react-native';
+import {StyleSheet, ScrollView, View, Text, Switch, Image} from 'react-native';
 
 import {useDispatch} from 'react-redux';
 import {clearUser} from '../store/userSlice';
@@ -16,6 +8,7 @@ import {removeSecureValue} from '../utils/keyChain';
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
+import MenuItem from '../components/MenuItem';
 
 const avatar = require('../assets/images/avatar.png');
 
@@ -76,20 +69,6 @@ const Settings = () => {
   );
 };
 
-const MenuItem = ({label, onPress, rightItem}) => {
-  const {theme} = useTheme();
-  return (
-    <Pressable
-      style={[styles.menuItem, {borderTopColor: theme.layoutBg}]}
-      onPress={onPress}>
-      <View>
-        <Text style={{color: theme.color}}>{label}</Text>
-      </View>
-      <View>{rightItem}</View>
-    </Pressable>
-  );
-};
-
 export default Settings;
 
 const styles = StyleSheet.create({
@@ -118,13 +97,5 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 40 / 2,
     marginRight: 10,
-  },
-  menuItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: 40,
-    alignItems: 'center',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#ccc',
   },
 });

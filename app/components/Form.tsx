@@ -1,23 +1,23 @@
 import React from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
-
 import {useTheme} from '../theme/useTheme';
 import {spacing, typeSizes} from '../theme/theme';
+import {InputPropsType} from '../types/components';
 
-const Input = props => {
+const Input = ({style, error, ...rest}: InputPropsType) => {
   const {theme} = useTheme();
   return (
     <View style={styles.inputWrp}>
       <TextInput
-        {...props}
+        {...rest}
         style={[
           styles.input,
-          {color: theme.textColor, borderColor: theme.layoutBg},
-          {...props.style},
+          {color: theme.color, borderColor: theme.layoutBg},
+          {...style},
         ]}
       />
-      {props.error ? (
-        <Text style={[styles.error, {color: theme.error}]}>{props.error}</Text>
+      {error ? (
+        <Text style={[styles.error, {color: theme.error}]}>{error}</Text>
       ) : null}
     </View>
   );

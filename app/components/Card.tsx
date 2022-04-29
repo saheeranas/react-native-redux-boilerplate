@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-
 import {useTheme} from '../theme/useTheme';
 import {spacing} from '../theme/theme';
+import {CardPropsType} from '../types/components';
 
-const Card = ({children, style}) => {
+const Card = ({children, style}: CardPropsType) => {
   const {theme} = useTheme();
   return (
     <View style={[styles.card, {backgroundColor: theme.cardBg}, style]}>
@@ -24,3 +24,5 @@ const styles = StyleSheet.create({
     borderRadius: spacing.borderRadius,
   },
 });
+
+// IntrinsicAttributes

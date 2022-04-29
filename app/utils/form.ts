@@ -1,6 +1,7 @@
 /**
  * Transoform error format to Formik setErrors format
  */
+
 export const transformToFormikErrors = errors => {
   // Response errors format
   // "errors": [

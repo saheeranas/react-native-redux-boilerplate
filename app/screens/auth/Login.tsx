@@ -15,6 +15,13 @@ import {login} from '../../services';
 import {setSecureValue} from '../../utils/keyChain';
 import {transformToFormikErrors} from '../../utils/form';
 
+interface ValuesType {
+  username: string;
+  password: string;
+}
+
+const initialValues: ValuesType = {username: '', password: ''};
+
 const LoginSchema = Yup.object().shape({
   username: Yup.string().min(5, 'Too Short!').required('Required'),
   password: Yup.string().min(5, 'Too Short!').required('Required'),
@@ -23,9 +30,9 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
   const dispatch = useDispatch();
 
-  const handleLogin = (values, {setErrors}) => {
+  const handleLogin = (values: ValuesType, {setErrors}: any) => {
     // Add grant_type value to obj
-    let reqObj = Object.assign({}, values, {grant_type: 'password'});
+    let reqObj: any = Object.assign({}, values, {grant_type: 'password'});
     // Service request
     login(new URLSearchParams(reqObj))
       .then(res => {
@@ -50,7 +57,7 @@ const Login = () => {
         <View style={styles.container}>
           <Card style={styles.formWrapper}>
             <Formik
-              initialValues={{username: '', password: ''}}
+              initialValues={initialValues}
               validationSchema={LoginSchema}
               onSubmit={handleLogin}>
               {({
@@ -73,9 +80,7 @@ const Login = () => {
                     value={values.username}
                     keyboardType="email-address"
                     error={
-                      errors.username && touched.username
-                        ? errors.username
-                        : null
+                      errors.username && touched.username ? errors.username : ''
                     }
                   />
                   <Input
@@ -86,9 +91,7 @@ const Login = () => {
                     value={values.password}
                     secureTextEntry
                     error={
-                      errors.password && touched.password
-                        ? errors.password
-                        : null
+                      errors.password && touched.password ? errors.password : ''
                     }
                   />
                   <Button
