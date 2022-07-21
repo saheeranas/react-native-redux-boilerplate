@@ -8,3 +8,7 @@ NativeModules.RNCNetInfo = {
 };
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+// jest.mock('react-navigation', () => ({
+//   NavigationEvents: 'mockNavigationEvents',
+// }));
