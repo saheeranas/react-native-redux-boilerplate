@@ -1,5 +1,8 @@
+import nock from 'nock';
 import {NativeModules} from 'react-native';
 // import jest from 'jest-mock';
+
+nock.disableNetConnect();
 
 NativeModules.RNCNetInfo = {
   getCurrentState: jest.fn(() => Promise.resolve()),
