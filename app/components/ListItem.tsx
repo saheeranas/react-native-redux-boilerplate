@@ -24,7 +24,7 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
       <Pressable
         // eslint-disable-next-line react-native/no-inline-styles
         style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
-        onPress={() => onPress()}>
+        onPress={onPress}>
         <Text
           style={[
             styles.title,
