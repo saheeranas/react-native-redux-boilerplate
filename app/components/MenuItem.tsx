@@ -3,7 +3,11 @@ import {View, Pressable, Text, StyleSheet} from 'react-native';
 import {useTheme} from '../theme/useTheme';
 import {MenuItemPropsType} from '../types/components';
 
-const MenuItem = ({label, onPress, rightItem}: MenuItemPropsType) => {
+const MenuItem = ({
+  label = 'Menu Item',
+  onPress,
+  rightItem,
+}: MenuItemPropsType) => {
   const {theme} = useTheme();
   return (
     <Pressable

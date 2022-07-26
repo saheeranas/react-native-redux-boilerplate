@@ -6,13 +6,14 @@ import {store} from '../store/store';
 import {ThemeProvider} from '../theme/useTheme';
 
 // Navigation
-import RootNavigation from '../routes/RootNavigation';
+// import RootNavigation from '../routes/RootNavigation';
 
-const AllTheProviders = () => {
+const AllTheProviders = ({children}) => {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <RootNavigation />
+        {children}
+        {/* <RootNavigation /> */}
       </ThemeProvider>
     </Provider>
   );

@@ -1,6 +1,17 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {
+export type Task = {
+  id: string;
+  title: string;
+  done: boolean;
+};
+
+export type InitialState = {
+  status: 'idle' | 'loading' | 'complete';
+  entities: Task[];
+};
+
+const initialState: InitialState = {
   status: 'idle',
   entities: [
     {
@@ -16,28 +27,28 @@ const initialState = {
   ],
 };
 
-const todosSlice = createSlice({
+const tasksSlice = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    todoAdded(state, action) {
+    taskAdded(state, action) {
       const todo = action.payload;
       state.entities.push(todo);
     },
-    todoToggled(state, action) {
+    taskToggled(state, action) {
       const todoId = action.payload;
       const todo = state.entities.find(e => e.id === todoId);
       if (todo) {
         todo.done = !todo.done;
       }
     },
-    completedTodosCleared(state) {
+    completedTasksCleared(state) {
       state.entities = state.entities.filter(todo => !todo.done);
     },
   },
 });
 
-export const {todoAdded, todoToggled, completedTodosCleared} =
-  todosSlice.actions;
+export const {taskAdded, taskToggled, completedTasksCleared} =
+  tasksSlice.actions;
 
-export default todosSlice.reducer;
+export default tasksSlice.reducer;

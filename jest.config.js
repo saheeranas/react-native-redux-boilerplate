@@ -1,9 +1,19 @@
 module.exports = {
   preset: 'react-native',
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+  },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  setupFiles: ['./jest.setup.js'],
-  transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation|@react-native)',
-  ],
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/'],
+  transformIgnorePatterns: ['node_modules/?!(static-container)'],
+  cacheDirectory: '.jest/cache',
+  globals: {
+    'ts-jest': {
+      isolatedModules: true,
+    },
+  },
+  clearMocks: true,
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**'],
 };
