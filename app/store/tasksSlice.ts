@@ -1,6 +1,17 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {
+export type Task = {
+  id: string;
+  title: string;
+  done: boolean;
+};
+
+export type InitialState = {
+  status: 'idle' | 'loading' | 'complete';
+  entities: Task[];
+};
+
+const initialState: InitialState = {
   status: 'idle',
   entities: [
     {
