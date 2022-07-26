@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {
-  todoAdded,
-  todoToggled,
-  completedTodosCleared,
+  taskAdded,
+  taskToggled,
+  completedTasksCleared,
 } from '../store/tasksSlice';
 import {RootState} from '../store/store';
 
@@ -27,7 +27,7 @@ const Tasks = () => {
   const addNewTask = () => {
     let temp = text.trim();
     if (temp !== '') {
-      dispatch(todoAdded({id: Date.now(), title: temp, done: false}));
+      dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
     }
     setText('');
   };
@@ -41,7 +41,7 @@ const Tasks = () => {
           <ListItem
             item={item}
             index={index}
-            onPress={() => dispatch(todoToggled(item.id))}
+            onPress={() => dispatch(taskToggled(item.id))}
           />
         )}
         keyExtractor={(item, index) => `${index}`}
@@ -58,7 +58,7 @@ const Tasks = () => {
               {backgroundColor: pressed ? '#c50e29' : 'transparent'},
             ]}
             // style={styles.btnClear}
-            onPress={() => dispatch(completedTodosCleared())}>
+            onPress={() => dispatch(completedTasksCleared())}>
             {({pressed}) => (
               <Icon
                 name="trash-bin"
