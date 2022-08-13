@@ -63,3 +63,6 @@ buck-out/
 
 # Jest
 /.jest/
+
+# Bundle
+index.android.bundle
