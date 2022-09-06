@@ -23,7 +23,7 @@ A React Native starter template.
 
 ## Dependencies
 
-- React Native **v0.69.5**
+- React Native **v0.70.0**
 - Redux Toolkit (RTK) v1.8.4
 - TypeScript
 - React Navigation v6
