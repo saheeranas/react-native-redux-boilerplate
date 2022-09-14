@@ -5,15 +5,16 @@ import {useSelector} from 'react-redux';
 // eslint-disable-next-line no-unused-vars
 import {getNews, login} from '../services';
 import {requestNewToken} from '../utils/token';
+import {RootState} from '../store/store';
 
 // eslint-disable-next-line no-unused-vars
-const Base_URL = 'http://10.0.2.2:4001/';
+// const Base_URL = 'http://10.0.2.2:4001/';
 
 const Demo = () => {
-  const token = useSelector(state => state.user.token);
+  const token = useSelector((state: RootState) => state.user.token);
 
   const getData = () => {
-    // getNews().then(res => console.log(res));
+    getNews().then(res => console.log(res));
   };
 
   const handleLogin = async () => {

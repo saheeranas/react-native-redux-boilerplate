@@ -4,7 +4,7 @@
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
 import React, {useEffect} from 'react';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet, ColorValue} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -28,10 +28,10 @@ import Tasks from '../screens/Tasks';
 import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
-const homeIcon = ({color}) => (
+const homeIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="ios-home-outline" size={20} color={color} />
 );
-const settingsIcon = ({color}) => (
+const settingsIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="ios-settings-outline" size={20} color={color} />
 );
 
