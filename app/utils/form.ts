@@ -2,8 +2,14 @@
  * Transoform error format to Formik setErrors format
  */
 
-export const transformToFormikErrors = errors => {
-  // Response errors format
+interface responseErrorType {
+  location: string;
+  msg: string;
+  param: string;
+}
+
+export const transformToFormikErrors = (errors: responseErrorType[]) => {
+  // Response errors format: ARRAY
   // "errors": [
   //   {
   //     "location": "body",
@@ -16,11 +22,18 @@ export const transformToFormikErrors = errors => {
   //     "param": "password"
   //   }
   // ]
-  let temp = {};
-  errors.forEach(item => {
-    temp[item.param] = temp[item.param]
-      ? `${temp[item.param]}\n${item.msg}`
-      : item.msg;
-  });
-  return temp;
+
+  // Return (Formik) errors format: OBJECT
+  // {
+  //   username: 'Invalid value',
+  //   password: 'Incorrect password',
+  // };
+
+  return errors.reduce(
+    (prev, curr) =>
+      Object.assign({}, prev, {
+        [curr.param]: curr.param ? `${curr.param}\n${curr.msg}` : curr.msg,
+      }),
+    {},
+  );
 };

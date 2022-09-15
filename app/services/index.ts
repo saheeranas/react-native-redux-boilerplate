@@ -1,18 +1,23 @@
+import {AxiosRequestHeaders} from 'axios';
 import apiClient from './api-client';
 const BASE_URL = 'http://10.0.2.2:4001';
 
-const contentTypes = {
+const contentTypes: any = {
   json: 'application/json',
+  mfd: 'multipart/form-data',
 };
 
 // Base function for GET requests
-const get = route => {
+const get = (route: string) => {
   return apiClient(`${BASE_URL}/${route}`);
 };
 
 // Base function for POST requests
-const post = async (route, {body, type = '', user = {}}) => {
-  let headers = {Accept: 'application/json'};
+const post = async (
+  route: string,
+  {body, type = '', user = {}}: {body: any; type: string; user: any},
+) => {
+  let headers: AxiosRequestHeaders = {Accept: 'application/json'};
   if (user.token) {
     headers.Authorization = `Bearer ${user.token}`;
   }
