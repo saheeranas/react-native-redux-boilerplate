@@ -19,7 +19,7 @@ import {getSecureValue} from '../utils/keyChain';
 // Redux slice for updating Access Token to store
 import {updateToken} from '../store/userSlice';
 
-import {RootState} from '../store/store';
+// import {RootState} from '../store/store';
 
 // Screens
 // eslint-disable-next-line no-unused-vars
@@ -44,7 +44,7 @@ export default function RootNavigation() {
   const {theme} = useTheme();
   const dispatch = useDispatch();
   // eslint-disable-next-line no-unused-vars
-  const user = useSelector((state: RootState) => state.user);
+  // const user = useSelector((state: RootState) => state.user);
 
   // Copy existing token from local storage to redux store
   useEffect(() => {

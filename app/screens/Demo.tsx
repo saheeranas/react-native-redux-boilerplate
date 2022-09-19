@@ -25,7 +25,7 @@ const Demo = () => {
 
     try {
       // eslint-disable-next-line no-unused-vars
-      let res = await login(body);
+      // let res = await login(body);
       // console.log(res.data);
     } catch (e) {}
   };
