@@ -69,4 +69,4 @@ buck-out/
 index.android.bundle
 
 # IDE
-/.vscode/
+.vscode
