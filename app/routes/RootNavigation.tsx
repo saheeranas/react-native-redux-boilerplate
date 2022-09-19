@@ -10,7 +10,8 @@ import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
+// import {useSelector, useDispatch} from 'react-redux';
 
 // Hook for theme change (Light/Dark Mode)
 import {useTheme} from '../theme/useTheme';
@@ -19,10 +20,9 @@ import {getSecureValue} from '../utils/keyChain';
 // Redux slice for updating Access Token to store
 import {updateToken} from '../store/userSlice';
 
-import {RootState} from '../store/store';
+// import {RootState} from '../store/store';
 
 // Screens
-// eslint-disable-next-line no-unused-vars
 // import Login from '../screens/auth/Login';
 import Tasks from '../screens/Tasks';
 import Settings from '../screens/Settings';
@@ -36,15 +36,13 @@ const settingsIcon = ({color}: {color: ColorValue | number}) => (
 );
 
 // Root Navigation
-// eslint-disable-next-line no-unused-vars
 // const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function RootNavigation() {
   const {theme} = useTheme();
   const dispatch = useDispatch();
-  // eslint-disable-next-line no-unused-vars
-  const user = useSelector((state: RootState) => state.user);
+  // const user = useSelector((state: RootState) => state.user);
 
   // Copy existing token from local storage to redux store
   useEffect(() => {

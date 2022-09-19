@@ -20,6 +20,7 @@ A React Native starter template.
 - Login wiring (optional)
 - Sample code (To Do App) included.
 - Secure Token storage.
+- Husky
 
 ## Dependencies
 

@@ -1,12 +1,13 @@
 import 'react-native';
 import React from 'react';
 // import {render} from '@testing-library/react-native';
-import {render, fireEvent, act} from '../app/utils/test-utils';
+import {render} from '../app/utils/test-utils';
 
 import Login from '../app/screens/auth/Login';
 
 test('Renders all the elements', () => {
-  let {getByPlaceholderText} = render(<Login />, {});
+  render(<Login />, {});
+  // let {getByPlaceholderText} = render(<Login />, {});
   // getByPlaceholderText('Username/Email');
   // getByPlaceholderText('Password');
 });

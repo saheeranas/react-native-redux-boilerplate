@@ -2,12 +2,10 @@ import React from 'react';
 import {Text, View, Button} from 'react-native';
 import {useSelector} from 'react-redux';
 
-// eslint-disable-next-line no-unused-vars
-import {getNews, login} from '../services';
+import {getNews} from '../services';
 import {requestNewToken} from '../utils/token';
 import {RootState} from '../store/store';
 
-// eslint-disable-next-line no-unused-vars
 // const Base_URL = 'http://10.0.2.2:4001/';
 
 const Demo = () => {
@@ -18,14 +16,13 @@ const Demo = () => {
   };
 
   const handleLogin = async () => {
-    const body = {
-      username: '',
-      password: '',
-    };
+    // const body = {
+    //   username: '',
+    //   password: '',
+    // };
 
     try {
-      // eslint-disable-next-line no-unused-vars
-      let res = await login(body);
+      // let res = await login(body);
       // console.log(res.data);
     } catch (e) {}
   };
