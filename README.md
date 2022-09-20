@@ -21,6 +21,7 @@ A React Native starter template.
 - Sample code (To Do App) included.
 - Secure Token storage.
 - Husky
+- Environment Variables (ENV)
 
 ## Dependencies
 
@@ -35,13 +36,13 @@ A React Native starter template.
 
 ## Installation
 
-Clone this repo
+### Clone this repo
 
 ```
 git clone https://github.com/saheeranas/react-native-redux-boilerplate.git
 ```
 
-Open project folder and install dependencies
+### Open project folder and install dependencies
 
 ```
 cd react-native-redux-boilerplate
@@ -50,7 +51,11 @@ or
 npm i
 ```
 
-Run the project
+### Rename environment variable files
+
+Example: .env.template file to .env
+
+### Run the project
 
 ```
 yarn android

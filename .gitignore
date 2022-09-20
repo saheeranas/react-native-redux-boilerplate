@@ -70,3 +70,6 @@ index.android.bundle
 
 # IDE
 .vscode
+.env
+.env.production
+.env.development
