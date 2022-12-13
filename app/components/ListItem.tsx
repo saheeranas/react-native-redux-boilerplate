@@ -37,9 +37,9 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
           {item.title}
         </Text>
         <Icon
-          name="checkbox-outline"
+          name="checkbox"
           size={20}
-          color={item.done ? '#00d258' : 'gray'}
+          color={item.done ? '#2BBCA2' : '#CECECE'}
         />
       </Pressable>
     </Card>

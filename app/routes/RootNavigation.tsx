@@ -29,10 +29,10 @@ import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
 const homeIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="ios-home-outline" size={20} color={color} />
+  <Icon name="ios-list-sharp" size={30} color={color} />
 );
 const settingsIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="ios-settings-outline" size={20} color={color} />
+  <Icon name="ios-settings-sharp" size={24} color={color} />
 );
 
 // Root Navigation
@@ -59,18 +59,23 @@ export default function RootNavigation() {
     <SafeAreaView style={styles.container}>
       <StatusBar
         animated
-        backgroundColor={theme.accent}
-        barStyle={'light-content'}
+        backgroundColor={theme.cardBg}
+        barStyle={theme?.name === 'light' ? 'dark-content' : 'light-content'}
       />
       <NavigationContainer>
         {/* {user.token ? ( */}
         <Tab.Navigator
           screenOptions={{
-            tabBarStyle: {backgroundColor: theme.cardBg},
+            tabBarStyle: {
+              backgroundColor: theme.cardBg,
+              borderTopColor: theme?.layoutBg,
+            },
             tabBarInactiveTintColor: theme.color,
-            tabBarActiveTintColor: theme.accent,
+            tabBarActiveTintColor: theme.primary,
             headerStyle: {backgroundColor: theme.cardBg, height: 50},
-            headerTitleStyle: {color: theme.color, fontSize: 16},
+            headerTitleAlign: 'center',
+            headerTitleStyle: {color: theme.primary, fontSize: 16},
+            tabBarShowLabel: false,
           }}>
           <Tab.Screen
             name="To Do"

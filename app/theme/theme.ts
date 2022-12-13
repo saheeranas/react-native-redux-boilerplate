@@ -18,6 +18,7 @@ interface typeSizesType {
 export interface themeType {
   name: string;
   color: string;
+  primary: string;
   layoutBg: string;
   cardBg: string;
   accent: string;
@@ -51,8 +52,9 @@ const typeSizes: typeSizesType = {
 const themes: themesType = {
   light: {
     name: 'light',
-    color: 'rgb(58, 58, 60)',
-    layoutBg: '#f0f0f0',
+    color: '#3D5A76',
+    primary: '#2BBCA2',
+    layoutBg: '#e0eeec',
     cardBg: '#ffffff',
     accent: '#0071ff',
     error: '#B00020',
@@ -60,6 +62,7 @@ const themes: themesType = {
   dark: {
     name: 'dark',
     color: '#ffffff',
+    primary: '#2BBCA2',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
     accent: '#0071ff',
