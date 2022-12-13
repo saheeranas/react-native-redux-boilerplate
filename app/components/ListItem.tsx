@@ -24,6 +24,12 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
       <Pressable
         // eslint-disable-next-line react-native/no-inline-styles
         style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
+        accessibilityLabel={
+          item.done ? 'Tap to uncheck from list' : 'Tap to check from list'
+        }
+        accessibilityHint="Toggles task done and undone"
+        accessibilityRole="radio"
+        accessibilityState={{checked: item.done}}
         onPress={onPress}>
         <Text
           style={[
