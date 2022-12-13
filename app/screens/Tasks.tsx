@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
-import {StyleSheet, FlatList, View, TextInput, Pressable} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {StyleSheet, FlatList, View, TextInput} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {
-  taskAdded,
-  taskToggled,
-  completedTasksCleared,
-} from '../store/tasksSlice';
+import {taskAdded, taskToggled} from '../store/tasksSlice';
 import {RootState} from '../store/store';
 
 import {useTheme} from '../theme/useTheme';
@@ -52,21 +47,20 @@ const Tasks = () => {
       <Card style={[styles.inputCard, {borderTopColor: theme?.layoutBg}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
-          <Pressable
+          {/* <Pressable
             style={({pressed}) => [
               styles.btnClear,
-              {backgroundColor: pressed ? '#c50e29' : 'transparent'},
+              {backgroundColor: pressed ? '#c50e29' : '#c50e29'},
             ]}
-            // style={styles.btnClear}
             onPress={() => dispatch(completedTasksCleared())}>
             {({pressed}) => (
               <Icon
                 name="trash-bin"
-                size={16}
-                color={pressed ? '#fff' : '#c50e29'}
+                size={14}
+                color={pressed ? '#fff' : '#fff'}
               />
             )}
-          </Pressable>
+          </Pressable> */}
           <View style={styles.inputBtnWrp}>
             <TextInput
               value={text}
@@ -74,7 +68,11 @@ const Tasks = () => {
               placeholderTextColor={theme?.color}
               style={[
                 styles.input,
-                {color: theme?.color, backgroundColor: theme?.layoutBg},
+                {
+                  color: theme?.color,
+                  backgroundColor: theme?.layoutBg,
+                  borderColor: theme?.layoutBg,
+                },
               ]}
               onChangeText={t => setText(t)}
               onSubmitEditing={() => addNewTask()}
@@ -114,6 +112,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 4,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
   },
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#f0f0f0',
     flex: 1,
-    borderRadius: 20,
+    borderRadius: 5,
     paddingHorizontal: 10,
     fontSize: 14,
     height: 38,
@@ -153,13 +153,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   btnClear: {
-    borderRadius: 20,
+    borderRadius: 2,
     paddingVertical: 5,
     paddingHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#c50e29',
+    // borderWidth: StyleSheet.hairlineWidth,
+    // borderColor: '#c50e29',
     marginRight: 8,
   },
   btnClearText: {
