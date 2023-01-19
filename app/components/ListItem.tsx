@@ -14,11 +14,12 @@ interface TaskItemType {
 interface ListItemType {
   item: TaskItemType;
   index?: number;
-  onPress: () => void;
+  onPress: (arg0: string) => void;
 }
 
 const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
   const {theme}: Partial<ThemeContextInterface> = useTheme();
+
   return (
     <Card style={styles.card}>
       <Pressable
@@ -30,7 +31,7 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
         accessibilityHint="Toggles task done and undone"
         accessibilityRole="radio"
         accessibilityState={{checked: item.done}}
-        onPress={onPress}>
+        onPress={() => onPress(item.id)}>
         <Text
           style={[
             styles.title,
