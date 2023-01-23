@@ -58,6 +58,8 @@ public class MainApplication extends Application implements ReactApplication {
             // If you opted-in for the New Architecture, we load the native entry point for this app.
             DefaultNewArchitectureEntryPoint.load();
         }
+        // ISSUE: Release build failing because of below code
+        // HOTFIX: Disabling ReactNativeFlipper for release build
         ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     }
 }
