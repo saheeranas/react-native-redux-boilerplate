@@ -60,6 +60,6 @@ public class MainApplication extends Application implements ReactApplication {
         }
         // ISSUE: Release build failing because of below code
         // HOTFIX: Disabling ReactNativeFlipper for release build
-        ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+        // ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     }
 }
