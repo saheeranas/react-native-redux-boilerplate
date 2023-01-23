@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {StyleSheet, FlatList, View, TextInput} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {taskAdded, taskToggled} from '../store/tasksSlice';
 import {RootState} from '../store/store';
+import {Task} from '../store/tasksSlice';
 
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
@@ -12,6 +13,8 @@ import ListItem from '../components/ListItem';
 
 const Tasks = () => {
   const {theme} = useTheme();
+
+  const inputRef = useRef<TextInput>(null);
 
   const todoList = useSelector((state: RootState) => state.todos.entities);
   // const loadingStatus = useSelector((state) => state.todos.status);
@@ -24,22 +27,26 @@ const Tasks = () => {
     if (temp !== '') {
       dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
     }
-    setText('');
+    inputRef.current?.clear();
   };
+
+  const onCheckedHandler = (id: string) => {
+    dispatch(taskToggled(id));
+  };
+
+  const renderItem = ({item, index}: {item: Task; index: number}) => (
+    <ListItem item={item} index={index} onPress={onCheckedHandler} />
+  );
+
+  const keyExtractor = (item: Task) => `task-${item.id}`;
 
   return (
     <Layout>
       {/* Tasks Listing starts here */}
       <FlatList
         data={todoList}
-        renderItem={({item, index}) => (
-          <ListItem
-            item={item}
-            index={index}
-            onPress={() => dispatch(taskToggled(item.id))}
-          />
-        )}
-        keyExtractor={(item, index) => `${index}`}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
         contentContainerStyle={styles.flatList}
       />
       {/* Tasks Listing ends here */}
@@ -47,23 +54,9 @@ const Tasks = () => {
       <Card style={[styles.inputCard, {borderTopColor: theme?.layoutBg}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
-          {/* <Pressable
-            style={({pressed}) => [
-              styles.btnClear,
-              {backgroundColor: pressed ? '#c50e29' : '#c50e29'},
-            ]}
-            onPress={() => dispatch(completedTasksCleared())}>
-            {({pressed}) => (
-              <Icon
-                name="trash-bin"
-                size={14}
-                color={pressed ? '#fff' : '#fff'}
-              />
-            )}
-          </Pressable> */}
           <View style={styles.inputBtnWrp}>
             <TextInput
-              value={text}
+              ref={inputRef}
               placeholder="New Task"
               placeholderTextColor={theme?.color}
               style={[

@@ -4,8 +4,8 @@
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
 import React, {useEffect} from 'react';
-import {StatusBar, StyleSheet, ColorValue} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {ColorValue} from 'react-native';
+
 import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -56,44 +56,42 @@ export default function RootNavigation() {
   }, [dispatch]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar
-        animated
-        backgroundColor={theme.cardBg}
-        barStyle={theme?.name === 'light' ? 'dark-content' : 'light-content'}
-      />
-      <NavigationContainer>
-        {/* {user.token ? ( */}
-        <Tab.Navigator
-          screenOptions={{
-            tabBarStyle: {
-              backgroundColor: theme.cardBg,
-              borderTopColor: theme?.layoutBg,
-            },
-            tabBarInactiveTintColor: theme.color,
-            tabBarActiveTintColor: theme.primary,
-            headerStyle: {backgroundColor: theme.cardBg, height: 50},
-            headerTitleAlign: 'center',
-            headerTitleStyle: {color: theme.primary, fontSize: 16},
-            tabBarShowLabel: false,
-          }}>
-          <Tab.Screen
-            name="To Do"
-            component={Tasks}
-            options={{
-              tabBarIcon: homeIcon,
-            }}
-          />
-          <Tab.Screen
-            name="Settings"
-            component={Settings}
-            options={{
-              // headerShown: false,
-              tabBarIcon: settingsIcon,
-            }}
-          />
-        </Tab.Navigator>
-        {/* ) : (
+    <NavigationContainer>
+      {/* {user.token ? ( */}
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: theme.cardBg,
+            borderTopColor: theme?.layoutBg,
+          },
+          tabBarInactiveTintColor: theme.color,
+          tabBarActiveTintColor: theme.primary,
+          headerStyle: {backgroundColor: theme.cardBg, height: 50},
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            color: theme.primary,
+            fontSize: 18,
+            fontWeight: 'bold',
+          },
+          tabBarShowLabel: false,
+        }}>
+        <Tab.Screen
+          name="To Do"
+          component={Tasks}
+          options={{
+            tabBarIcon: homeIcon,
+          }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={Settings}
+          options={{
+            // headerShown: false,
+            tabBarIcon: settingsIcon,
+          }}
+        />
+      </Tab.Navigator>
+      {/* ) : (
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
@@ -101,11 +99,6 @@ export default function RootNavigation() {
           <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
         )} */}
-      </NavigationContainer>
-    </SafeAreaView>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {flex: 1},
-});
