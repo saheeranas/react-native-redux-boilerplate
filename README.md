@@ -16,6 +16,7 @@ A React Native starter template.
 
 - Redux setup with Redux Toolkit.
 - New Architecture ready (Android release build is success)
+- Typescript
 - Dark Mode
 - Navigation setup
 - Login wiring (optional)
@@ -23,6 +24,7 @@ A React Native starter template.
 - Secure Token storage.
 - Husky
 - Environment Variables (ENV)
+- Storybook configured
 
 ## Dependencies
 
@@ -34,6 +36,7 @@ A React Native starter template.
 - Formik & Yup
 - Axios
 - React Native Keychain
+- Storybook
 
 ## Installation
 
