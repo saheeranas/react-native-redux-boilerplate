@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json" /* Recommended React Native TSConfig base */,
   "compilerOptions": {
+    "jsx": "react",
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "baseUrl": "."
