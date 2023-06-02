@@ -1,6 +1,6 @@
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react-native';
 import React from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Button} from './Button';
 
 const ButtonMeta = {
@@ -14,7 +14,7 @@ const ButtonMeta = {
   },
   decorators: [
     Story => (
-      <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
+      <View style={styles.containerStyle}>
         <Story />
       </View>
     ),
@@ -35,3 +35,12 @@ export const Another: ButtonStory = {
     text: 'Press me!',
   },
 };
+
+// Styles
+const styles = StyleSheet.create({
+  containerStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+});
