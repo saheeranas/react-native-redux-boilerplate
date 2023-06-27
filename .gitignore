@@ -65,6 +65,9 @@ yarn-error.log
 # Jest
 /.jest/
 
+# testing
+/coverage
+
 # Bundle
 index.android.bundle
 
