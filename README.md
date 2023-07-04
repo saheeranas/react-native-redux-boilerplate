@@ -20,7 +20,8 @@ A React Native starter template.
 - Dark Mode
 - Navigation setup
 - Login wiring (optional)
-- Sample code (To Do App) included.
+- Sample CRUD code (To Do App) included.
+- Sample Network Call (RTK) included.
 - Secure Token storage.
 - Husky
 - Environment Variables (ENV)
