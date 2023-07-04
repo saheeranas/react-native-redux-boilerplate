@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import React from 'react';
 
+import {useTheme} from '../theme/useTheme';
+
 type NetworkExampleCardProps = {
   title: string;
   loading: boolean;
@@ -20,10 +22,12 @@ const NetwokExampleCard = ({
   onPress = () => {},
   children,
 }: NetworkExampleCardProps) => {
+  const {theme} = useTheme();
+
   return (
     <View style={styles.card}>
-      <View style={styles.cardHeader}>
-        <Text style={styles.cardTitle}>{title}</Text>
+      <View style={[styles.cardHeader, {backgroundColor: theme.cardBg}]}>
+        <Text style={[styles.cardTitle, {color: theme.color}]}>{title}</Text>
         <Pressable style={styles.btnFire} onPress={onPress}>
           {loading ? (
             <ActivityIndicator size="small" color="#ffffff" />
@@ -33,7 +37,9 @@ const NetwokExampleCard = ({
         </Pressable>
       </View>
 
-      <View style={styles.cardBody}>{children}</View>
+      <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '88'}]}>
+        {children}
+      </View>
     </View>
   );
 };

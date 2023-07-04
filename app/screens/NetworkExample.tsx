@@ -2,6 +2,7 @@ import React from 'react';
 import {ScrollView, StyleSheet, Text} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
+import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import NetwokExampleCard from '../components/NetwokExampleCard';
 
@@ -9,6 +10,7 @@ import {RootState, AppDispatch} from '../store/store';
 import {fetchUser} from '../store/dummyNetwork';
 
 export default function NetworkExample() {
+  const {theme} = useTheme();
   const dispatch = useDispatch<AppDispatch>();
 
   const userStatus = useSelector(
@@ -16,8 +18,6 @@ export default function NetworkExample() {
   );
 
   const user = useSelector((state: RootState) => state.dummyNetwork.data);
-
-  console.log(user);
 
   const fetchData = () => {
     dispatch(fetchUser());
@@ -31,19 +31,21 @@ export default function NetworkExample() {
           title="GET"
           loading={userStatus === 'loading'}
           onPress={fetchData}>
-          <Text style={styles.url}>
+          <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users/1
           </Text>
-          <Text style={styles.url}>{userStatus}</Text>
+          <Text style={[styles.url, {color: theme.color}]}>{userStatus}</Text>
 
           {userStatus === 'succeeded' ? (
             <>
-              <Text>{user.name}</Text>
-              <Text>{user.email}</Text>
+              <Text style={{color: theme.color}}>{user.name}</Text>
+              <Text style={{color: theme.color}}>{user.email}</Text>
             </>
           ) : (
             <>
-              <Text style={styles.url}>Press fire to fetch the data</Text>
+              <Text style={[styles.url, {color: theme.color}]}>
+                Press fire to fetch the data
+              </Text>
             </>
           )}
         </NetwokExampleCard>
