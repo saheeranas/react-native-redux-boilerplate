@@ -25,11 +25,15 @@ import {updateToken} from '../store/userSlice';
 // Screens
 // import Login from '../screens/auth/Login';
 import Tasks from '../screens/Tasks';
+import NetworkExample from '../screens/NetworkExample';
 import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
 const homeIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="ios-list-sharp" size={30} color={color} />
+);
+const networkIcon = ({color}: {color: ColorValue | number}) => (
+  <Icon name="wifi-sharp" size={24} color={color} />
 );
 const settingsIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="ios-settings-sharp" size={24} color={color} />
@@ -80,6 +84,13 @@ export default function RootNavigation() {
           component={Tasks}
           options={{
             tabBarIcon: homeIcon,
+          }}
+        />
+        <Tab.Screen
+          name="NetworkExample"
+          component={NetworkExample}
+          options={{
+            tabBarIcon: networkIcon,
           }}
         />
         <Tab.Screen
