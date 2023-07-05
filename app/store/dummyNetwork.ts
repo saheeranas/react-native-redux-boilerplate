@@ -12,6 +12,7 @@ type InitialState = {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null | undefined;
   data: User;
+  newUser: User;
 };
 
 // Initial State
@@ -19,6 +20,10 @@ const initialState: InitialState = {
   status: 'idle',
   error: null,
   data: {
+    name: '',
+    email: '',
+  },
+  newUser: {
     name: '',
     email: '',
   },
@@ -31,6 +36,17 @@ export const fetchUser = createAsyncThunk('userDetails', async () => {
   );
   return response;
 });
+
+export const createUser = createAsyncThunk(
+  'users/new',
+  async (payload: User) => {
+    const response = await apiClient.post(
+      'https://jsonplaceholder.typicode.com/users',
+      payload,
+    );
+    return response;
+  },
+);
 
 // Slice
 const dummyNetwokSlice = createSlice({
@@ -50,6 +66,10 @@ const dummyNetwokSlice = createSlice({
       .addCase(fetchUser.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(createUser.fulfilled, (state, action) => {
+        state.newUser.name = action.payload.data.name;
+        state.newUser.email = action.payload.data.email;
       });
   },
 });

@@ -11,7 +11,7 @@ import {useTheme} from '../theme/useTheme';
 
 type NetworkExampleCardProps = {
   title: string;
-  loading: boolean;
+  loading?: boolean;
   onPress?: () => void;
   children: React.ReactNode;
 };
