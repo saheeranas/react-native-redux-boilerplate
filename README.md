@@ -29,7 +29,7 @@ A React Native starter template.
 
 ## Dependencies
 
-- React Native **v0.72.1**
+- React Native **v0.72.3**
 - Redux Toolkit (RTK) v1.9.5
 - TypeScript
 - React Navigation v6
@@ -38,6 +38,14 @@ A React Native starter template.
 - Axios
 - React Native Keychain
 - Storybook
+
+## Screenshots
+
+<p float="left">
+  <img src="demo/assets/ss1.png?raw=true" width="200" />
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="demo/assets/ss2.png?raw=true" width="200" />  
+</p>
 
 ## Installation
 
