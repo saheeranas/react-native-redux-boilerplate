@@ -30,13 +30,13 @@ import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
 const homeIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="ios-list-sharp" size={30} color={color} />
-);
+  <Icon name="list-sharp" size={30} color={color} />
+); 
 const networkIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="wifi-sharp" size={24} color={color} />
 );
 const settingsIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="ios-settings-sharp" size={24} color={color} />
+  <Icon name="settings-sharp" size={24} color={color} />
 );
 
 // Root Navigation
