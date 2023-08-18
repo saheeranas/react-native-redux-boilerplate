@@ -76,3 +76,4 @@ index.android.bundle
 .env
 .env.production
 .env.development
+.eslintcache

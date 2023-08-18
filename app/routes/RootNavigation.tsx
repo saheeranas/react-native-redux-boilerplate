@@ -31,7 +31,7 @@ import Settings from '../screens/Settings';
 // Icons for Bottom Tab Navigation
 const homeIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="list-sharp" size={30} color={color} />
-); 
+);
 const networkIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="wifi-sharp" size={24} color={color} />
 );
