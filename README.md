@@ -42,9 +42,9 @@ A React Native starter template.
 ## Screenshots
 
 <p float="left">
-  <img src="demo/assets/ss1.png?raw=true" width="200" />
+  <img src="demo/assets/ss1.png?raw=true" width="250" />
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="demo/assets/ss2.png?raw=true" width="200" />  
+  <img src="demo/assets/ss2.png?raw=true" width="250" />  
 </p>
 
 ## Installation
