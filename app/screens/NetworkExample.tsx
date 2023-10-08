@@ -18,12 +18,15 @@ export default function NetworkExample() {
   const {theme} = useTheme();
   const dispatch = useDispatch<AppDispatch>();
 
-  const userStatus = useSelector(
-    (state: RootState) => state.dummyNetwork.status,
-  );
-
   const user = useSelector((state: RootState) => state.dummyNetwork.data);
   const newUser = useSelector((state: RootState) => state.dummyNetwork.newUser);
+
+  const dataStatus = useSelector(
+    (state: RootState) => state.dummyNetwork.data.status,
+  );
+  const newUserStatus = useSelector(
+    (state: RootState) => state.dummyNetwork.newUser.status,
+  );
 
   const fetchData = () => {
     dispatch(fetchUser());
@@ -39,14 +42,14 @@ export default function NetworkExample() {
         {/* Get Card */}
         <NetwokExampleCard
           title="GET"
-          loading={userStatus === 'loading'}
+          loading={dataStatus === 'loading'}
           onPress={fetchData}>
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users/1
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>{userStatus}</Text>
+          <Text style={[styles.url, {color: theme.color}]}>{dataStatus}</Text>
 
-          {userStatus === 'succeeded' ? (
+          {dataStatus === 'succeeded' ? (
             <>
               <Text style={{color: theme.color}}>{user.name}</Text>
               <Text style={{color: theme.color}}>{user.email}</Text>
@@ -61,9 +64,15 @@ export default function NetworkExample() {
         </NetwokExampleCard>
 
         {/* Post Card */}
-        <NetwokExampleCard title="POST" onPress={postData}>
+        <NetwokExampleCard
+          title="POST"
+          loading={newUserStatus === 'loading'}
+          onPress={postData}>
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users
+          </Text>
+          <Text style={[styles.url, {color: theme.color}]}>
+            {newUserStatus}
           </Text>
 
           <View style={styles.row}>
