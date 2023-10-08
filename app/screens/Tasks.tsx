@@ -51,7 +51,8 @@ const Tasks = () => {
       />
       {/* Tasks Listing ends here */}
 
-      <Card style={[styles.inputCard, {borderTopColor: theme?.layoutBg}]}>
+      <Card
+        style={[styles.inputCard, {borderTopColor: theme?.cardBorderColor}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
           <View style={styles.inputBtnWrp}>
@@ -89,21 +90,14 @@ const styles = StyleSheet.create({
   },
   flatList: {
     paddingHorizontal: 12,
-    paddingVertical: 16,
+    paddingVertical: 30,
   },
   tickIcon: {
     width: 22,
     height: 22,
   },
   inputCard: {
-    borderTopWidth: 1,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
+    borderTopWidth: StyleSheet.hairlineWidth,
     elevation: 4,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
@@ -126,7 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     fontSize: 14,
-    height: 38,
+    height: 45,
     backgroundColor: '#f6f6f6',
   },
   btnAdd: {
