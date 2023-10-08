@@ -74,7 +74,7 @@ export default Settings;
 const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
-    paddingVertical: 16,
+    paddingVertical: 30,
     paddingHorizontal: 12,
   },
   header: {

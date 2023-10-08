@@ -8,6 +8,7 @@ import {
 import React from 'react';
 
 import {useTheme} from '../theme/useTheme';
+import {spacing} from '../theme/theme';
 
 type NetworkExampleCardProps = {
   title: string;
@@ -26,9 +27,22 @@ const NetwokExampleCard = ({
 
   return (
     <View style={styles.card}>
-      <View style={[styles.cardHeader, {backgroundColor: theme.cardBg}]}>
+      <View
+        style={[
+          styles.cardHeader,
+          {
+            backgroundColor: theme.cardBg,
+            borderTopLeftRadius: spacing.borderRadius,
+            borderTopRightRadius: spacing.borderRadius,
+          },
+        ]}>
         <Text style={[styles.cardTitle, {color: theme.color}]}>{title}</Text>
-        <Pressable style={styles.btnFire} onPress={onPress}>
+        <Pressable
+          style={({pressed}) => [
+            styles.btnFire,
+            {backgroundColor: pressed ? theme.primary + '50' : theme.primary},
+          ]}
+          onPress={onPress}>
           {loading ? (
             <ActivityIndicator size="small" color="#ffffff" />
           ) : (
@@ -37,7 +51,7 @@ const NetwokExampleCard = ({
         </Pressable>
       </View>
 
-      <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '88'}]}>
+      <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '60'}]}>
         {children}
       </View>
     </View>
@@ -64,20 +78,20 @@ const styles = StyleSheet.create({
   },
   cardBody: {
     backgroundColor: '#F8F7F7',
-    height: 150,
+    // height: 150,
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
   btnFire: {
-    width: 77,
-    height: 30,
+    width: 60,
+    height: 25,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#2BBCA2',
     borderRadius: 12,
   },
   btnFireText: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#fff',
   },
 });

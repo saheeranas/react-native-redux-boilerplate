@@ -21,6 +21,7 @@ export interface themeType {
   primary: string;
   layoutBg: string;
   cardBg: string;
+  cardBorderColor: string;
   accent: string;
   error: string;
 }
@@ -32,9 +33,9 @@ interface themesType {
 
 // Spacing:- Common margins and paddings
 const spacing: spacingType = {
-  borderRadius: 8,
+  borderRadius: 16,
   layoutPaddingH: 16,
-  containerPaddingV: 10,
+  containerPaddingV: 22,
   cardMarginB: 16,
 };
 
@@ -52,19 +53,21 @@ const typeSizes: typeSizesType = {
 const themes: themesType = {
   light: {
     name: 'light',
-    color: '#3D5A76',
-    primary: '#2BBCA2',
-    layoutBg: '#e0eeec',
+    color: '#695D5D',
+    primary: '#EF936E',
+    layoutBg: '#F4F3F1',
     cardBg: '#ffffff',
+    cardBorderColor: '#EEECEC',
     accent: '#0071ff',
     error: '#B00020',
   },
   dark: {
     name: 'dark',
     color: '#ffffff',
-    primary: '#2BBCA2',
+    primary: '#EF936E',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
+    cardBorderColor: '#1A1A1A',
     accent: '#0071ff',
     error: '#B00020',
   },

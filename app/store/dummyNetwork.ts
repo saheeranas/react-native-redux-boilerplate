@@ -4,12 +4,12 @@ import apiClient from '../services/api-client';
 
 // Types
 type User = {
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
   name: string;
   email: string;
 };
 
 type InitialState = {
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null | undefined;
   data: User;
   newUser: User;
@@ -17,13 +17,14 @@ type InitialState = {
 
 // Initial State
 const initialState: InitialState = {
-  status: 'idle',
   error: null,
   data: {
+    status: 'idle',
     name: '',
     email: '',
   },
   newUser: {
+    status: 'idle',
     name: '',
     email: '',
   },
@@ -39,7 +40,7 @@ export const fetchUser = createAsyncThunk('userDetails', async () => {
 
 export const createUser = createAsyncThunk(
   'users/new',
-  async (payload: User) => {
+  async (payload: Omit<User, 'status'>) => {
     const response = await apiClient.post(
       'https://jsonplaceholder.typicode.com/users',
       payload,
@@ -55,21 +56,31 @@ const dummyNetwokSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
+      // data - for GET example
       .addCase(fetchUser.pending, state => {
-        state.status = 'loading';
+        state.data.status = 'loading';
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.data.status = 'succeeded';
         state.data.name = action.payload.data.name;
         state.data.email = action.payload.data.email;
       })
       .addCase(fetchUser.rejected, (state, action) => {
-        state.status = 'failed';
+        state.data.status = 'failed';
         state.error = action.error.message;
       })
+      // newUser - POST example
+      .addCase(createUser.pending, state => {
+        state.newUser.status = 'loading';
+      })
       .addCase(createUser.fulfilled, (state, action) => {
+        state.newUser.status = 'succeeded';
         state.newUser.name = action.payload.data.name;
         state.newUser.email = action.payload.data.email;
+      })
+      .addCase(createUser.rejected, (state, action) => {
+        state.newUser.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });

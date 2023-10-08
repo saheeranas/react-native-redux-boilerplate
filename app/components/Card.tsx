@@ -7,7 +7,12 @@ import {CardPropsType} from '../types/components';
 const Card = ({children, style}: CardPropsType) => {
   const {theme} = useTheme();
   return (
-    <View style={[styles.card, {backgroundColor: theme.cardBg}, style]}>
+    <View
+      style={[
+        styles.card,
+        {backgroundColor: theme.cardBg, borderColor: theme.cardBorderColor},
+        style,
+      ]}>
       {children}
     </View>
   );
@@ -22,6 +27,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.layoutPaddingH,
     paddingVertical: spacing.layoutPaddingH,
     borderRadius: spacing.borderRadius,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#fff',
   },
 });
 
