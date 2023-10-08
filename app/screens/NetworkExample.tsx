@@ -91,7 +91,7 @@ export default function NetworkExample() {
 const styles = StyleSheet.create({
   scrollview: {
     paddingHorizontal: 16,
-    paddingVertical: 20,
+    paddingVertical: 30,
   },
   url: {
     fontSize: 12,
