@@ -10,12 +10,6 @@ const mockdata = {
   done: false,
 };
 const onPressMock = jest.fn();
-const eventData = {
-  nativeEvent: {
-    pageX: 20,
-    pageY: 30,
-  },
-};
 
 describe('ListItem', () => {
   it('should render', () => {
@@ -28,7 +22,8 @@ describe('ListItem', () => {
       {},
     );
 
-    fireEvent.press(getByText(mockdata.title), eventData);
-    expect(onPressMock).toHaveBeenCalledWith(eventData);
+    const pressable = getByText(mockdata.title);
+    fireEvent.press(pressable);
+    expect(onPressMock).toHaveBeenCalledWith(mockdata.id);
   });
 });
