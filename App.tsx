@@ -1,10 +1,8 @@
 import React from 'react';
-// import {Provider} from 'react-redux';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import ReduxProvider from './app/store';
 import {STORYBOOK_MODE} from '@env';
-// import {store} from './app/store/store';
 import {ThemeProvider} from './app/theme/useTheme';
 import {NoInternetToast} from './app/components/NoInternet';
 
