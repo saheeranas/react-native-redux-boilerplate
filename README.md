@@ -15,6 +15,7 @@ A React Native starter template.
 ## Features
 
 - Redux setup with Redux Toolkit.
+- Offline storage with Redux Persist.
 - New Architecture ready (Android release build is success)
 - Typescript
 - Dark Mode
@@ -37,6 +38,7 @@ A React Native starter template.
 - Formik & Yup
 - Axios
 - React Native Keychain
+- Redux persist
 - Storybook
 
 ## Screenshots
