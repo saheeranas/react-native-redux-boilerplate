@@ -3,9 +3,9 @@ import React from 'react';
 import {describe, it, expect} from '@jest/globals';
 
 // import {render} from '@testing-library/react-native';
-import {render, act, fireEvent} from '../app/utils/test-utils';
+import {render, act, fireEvent} from '../../app/utils/test-utils';
 
-import Login from '../app/screens/auth/Login';
+import Login from '../../app/screens/auth/Login';
 
 describe('Login screen', () => {
   it('Renders all the elements', () => {

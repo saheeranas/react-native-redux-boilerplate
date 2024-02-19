@@ -2,9 +2,9 @@ import 'react-native';
 import React from 'react';
 import {describe, it} from '@jest/globals';
 
-import {fireEvent, render} from '../app/utils/test-utils';
+import {fireEvent, render} from '../../app/utils/test-utils';
 
-import Tasks from '../app/screens/Tasks';
+import Tasks from '../../app/screens/Tasks';
 
 describe('Tasks screen', () => {
   it('Renders the screen', () => {

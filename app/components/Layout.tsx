@@ -15,7 +15,9 @@ const Layout = ({children, style}: LayoutPropsType) => {
         backgroundColor={theme.cardBg}
         barStyle={theme?.name === 'light' ? 'dark-content' : 'light-content'}
       />
-      <View style={[styles.layout, {backgroundColor: theme?.layoutBg}, style]}>
+      <View
+        testID="Layout.LayoutContainer"
+        style={[styles.layout, {backgroundColor: theme?.layoutBg}, style]}>
         {children}
       </View>
     </SafeAreaView>
