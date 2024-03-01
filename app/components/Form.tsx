@@ -17,7 +17,11 @@ const Input = ({style, error, ...rest}: InputPropsType) => {
         ]}
       />
       {error ? (
-        <Text style={[styles.error, {color: theme.error}]}>{error}</Text>
+        <Text
+          testID={rest.testID + '-error'}
+          style={[styles.error, {color: theme.error}]}>
+          {error}
+        </Text>
       ) : null}
     </View>
   );

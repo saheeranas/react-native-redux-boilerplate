@@ -1,3 +1,5 @@
+import {describe, it, expect} from '@jest/globals';
+
 import {transformToFormikErrors} from '../../app/utils/form';
 
 let inputErrors = [
@@ -19,7 +21,7 @@ let resultErrors = {
 };
 
 describe('Formik', () => {
-  test('should transform errors correctly', () => {
+  it('should transform errors correctly', () => {
     expect(transformToFormikErrors(inputErrors)).toEqual(resultErrors);
   });
 });

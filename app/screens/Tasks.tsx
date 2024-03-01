@@ -57,6 +57,7 @@ const Tasks = () => {
         <View style={styles.inputBtnRow}>
           <View style={styles.inputBtnWrp}>
             <TextInput
+              testID="Tasks.newTaskInput"
               ref={inputRef}
               placeholder="New Task"
               placeholderTextColor={theme?.color}

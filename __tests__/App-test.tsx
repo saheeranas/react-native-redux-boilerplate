@@ -4,12 +4,13 @@
  */
 import 'react-native';
 import React from 'react';
-import {render} from '@testing-library/react-native';
-import App from '../App';
-jest.useFakeTimers();
-
 // Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+import {jest, describe, it, expect} from '@jest/globals';
+import {render} from '@testing-library/react-native';
+
+import App from '../App';
+
+jest.useFakeTimers();
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';

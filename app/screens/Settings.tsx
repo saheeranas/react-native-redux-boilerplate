@@ -48,6 +48,7 @@ const Settings = () => {
               onPress={() => console.log('here')}
               rightItem={
                 <Switch
+                  testID="Settings.ThemeSwitch"
                   value={theme.name === 'dark'}
                   onValueChange={value => toggleTheme(value)}
                   trackColor={{false: '#767577', true: '#81b0ff'}}
