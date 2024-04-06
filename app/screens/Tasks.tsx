@@ -58,7 +58,6 @@ const Tasks = () => {
         style={[styles.inputCard, {borderTopColor: theme?.cardBorderColor}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
-          {/* <View style={styles.inputBtnWrp}> */}
           <TextInput
             testID="Tasks.newTaskInput"
             ref={inputRef}
@@ -78,7 +77,6 @@ const Tasks = () => {
           <Button onPress={addNewTask} style={styles.btnAdd}>
             <Icon name="checkmark-sharp" size={20} color={theme.layoutBg} />
           </Button>
-          {/* </View> */}
         </View>
         {/* TextInput and InputButton ends here */}
       </Card>

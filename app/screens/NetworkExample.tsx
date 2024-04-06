@@ -47,9 +47,11 @@ export default function NetworkExample() {
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users/1
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>{dataStatus}</Text>
+          <Text style={[styles.status, {color: theme.color}]}>
+            {dataStatus}
+          </Text>
 
-          {dataStatus === 'succeeded' ? (
+          {dataStatus === 'success' ? (
             <>
               <Text style={{color: theme.color}}>{user.name}</Text>
               <Text style={{color: theme.color}}>{user.email}</Text>
@@ -71,7 +73,7 @@ export default function NetworkExample() {
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>
+          <Text style={[styles.status, {color: theme.color}]}>
             {newUserStatus}
           </Text>
 
@@ -103,7 +105,12 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   url: {
+    fontSize: 14,
+    marginBottom: 10,
+  },
+  status: {
     fontSize: 12,
+    fontWeight: 'bold',
     marginBottom: 10,
   },
   code: {
@@ -115,5 +122,8 @@ const styles = StyleSheet.create({
   },
   grid: {
     flex: 0.5,
+  },
+  p: {
+    fontSize: 12,
   },
 });
