@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, ScrollView, View, Text, Switch, Image} from 'react-native';
+import {StyleSheet, ScrollView, View, Switch, Image} from 'react-native';
 
 import {useDispatch} from 'react-redux';
 import {clearUser} from '../store/userSlice';
@@ -9,6 +9,7 @@ import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import MenuItem from '../components/MenuItem';
+import Text from '../components/Text';
 
 const avatar = require('../assets/images/avatar.png');
 
@@ -28,12 +29,14 @@ const Settings = () => {
     <Layout>
       <ScrollView
         style={[styles.contentContainer, {backgroundColor: theme.layoutBg}]}>
-        <Card style={{backgroundColor: theme.cardBg}}>
+        <Card style={{backgroundColor: theme.cardBg, marginBottom: 50}}>
           <View style={styles.avatarRow}>
             <Image source={avatar} style={styles.avatar} />
             <View>
               <Text style={{color: theme.color}}>Hermione Granger</Text>
-              <Text style={{color: theme.color}}>u/hermione</Text>
+              <Text variant="titleSmall" style={{color: theme.color}}>
+                u/hermione
+              </Text>
             </View>
           </View>
           <>
@@ -75,7 +78,8 @@ export default Settings;
 const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
-    paddingVertical: 30,
+    paddingTop: 30,
+    paddingBottom: 70,
     paddingHorizontal: 12,
   },
   header: {

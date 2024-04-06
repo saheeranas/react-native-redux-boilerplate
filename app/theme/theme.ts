@@ -41,12 +41,31 @@ const spacing: spacingType = {
 
 // Type Sizes:- Font sizes and weights
 const typeSizes: typeSizesType = {
-  FONT_SIZE_SMALL: 12,
-  FONT_SIZE_MEDIUM: 14,
   FONT_SIZE_LARGE: 16,
+  FONT_SIZE_MEDIUM: 14,
+  FONT_SIZE_SMALL: 12,
   FONT_WEIGHT_LIGHT: 200,
   FONT_WEIGHT_MEDIUM: 600,
-  FONT_WEIGHT_HEAVY: 800,
+  FONT_WEIGHT_HEAVY: 700,
+};
+
+const typeVariants = {
+  titleLarge: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: typeSizes.FONT_SIZE_LARGE,
+  },
+  titleSmall: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: typeSizes.FONT_SIZE_SMALL,
+  },
+  bodyMedium: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: typeSizes.FONT_SIZE_MEDIUM,
+  },
+  bodySmall: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: typeSizes.FONT_SIZE_SMALL,
+  },
 };
 
 // Themes:- Can alter values here. Can only be consumed through Context (see useTheme.js file)
@@ -73,4 +92,4 @@ const themes: themesType = {
   },
 };
 
-export {spacing, typeSizes, themes};
+export {spacing, typeSizes, typeVariants, themes};

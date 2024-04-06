@@ -1,10 +1,11 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import NetwokExampleCard from '../components/NetwokExampleCard';
+import Text from '../components/Text';
 
 import {RootState, AppDispatch} from '../store/store';
 import {fetchUser, createUser} from '../store/dummyNetwork';
@@ -105,7 +106,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   url: {
-    fontSize: 14,
     marginBottom: 10,
   },
   status: {
@@ -122,8 +122,5 @@ const styles = StyleSheet.create({
   },
   grid: {
     flex: 0.5,
-  },
-  p: {
-    fontSize: 12,
   },
 });

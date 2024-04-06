@@ -13,6 +13,7 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import ListItem from '../components/ListItem';
 import {Button} from '../components/Button/Button';
+import {typeVariants} from '../theme/theme';
 
 const Tasks = () => {
   const {theme} = useTheme();
@@ -65,6 +66,7 @@ const Tasks = () => {
             placeholderTextColor={theme?.color}
             style={[
               styles.input,
+              typeVariants.bodyMedium,
               {
                 color: theme?.color,
                 backgroundColor: theme?.layoutBg,

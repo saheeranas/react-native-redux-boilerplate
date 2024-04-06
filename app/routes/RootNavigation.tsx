@@ -15,6 +15,7 @@ import {useDispatch} from 'react-redux';
 
 // Hook for theme change (Light/Dark Mode)
 import {useTheme} from '../theme/useTheme';
+import {typeVariants} from '../theme/theme';
 // Get Value from Keyring (Encrypted token)
 import {getSecureValue} from '../utils/keyChain';
 // Redux slice for updating Access Token to store
@@ -73,8 +74,9 @@ export default function RootNavigation() {
           headerStyle: {backgroundColor: theme.cardBg, height: 50},
           headerTitleAlign: 'center',
           headerTitleStyle: {
-            color: theme.primary,
+            fontFamily: typeVariants.titleLarge.fontFamily,
             fontSize: 18,
+            color: theme.primary,
             fontWeight: 'bold',
           },
           tabBarShowLabel: false,
