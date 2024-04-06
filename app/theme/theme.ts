@@ -54,7 +54,7 @@ const themes: themesType = {
   light: {
     name: 'light',
     color: '#695D5D',
-    primary: '#EF936E',
+    primary: '#2bbca2',
     layoutBg: '#F4F3F1',
     cardBg: '#ffffff',
     cardBorderColor: '#EEECEC',
@@ -64,7 +64,7 @@ const themes: themesType = {
   dark: {
     name: 'dark',
     color: '#ffffff',
-    primary: '#EF936E',
+    primary: '#2bbca2',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
     cardBorderColor: '#1A1A1A',
