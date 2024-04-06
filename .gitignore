@@ -72,7 +72,7 @@ yarn-error.log
 index.android.bundle
 
 # IDE
-.vscode
+.vscode/
 .env
 .env.production
 .env.development
