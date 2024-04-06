@@ -1,19 +1,28 @@
 import * as React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {Pressable, Text, StyleSheet, ViewStyle} from 'react-native';
+
+import {useTheme} from '../../theme/useTheme';
 
 export type ButtonProps = {
   onPress: () => void;
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
+  style?: ViewStyle;
 };
 
-export const Button = ({onPress, text}: ButtonProps) => {
+export const Button = ({onPress, text, children, style}: ButtonProps) => {
+  const {theme} = useTheme();
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={onPress}
-      activeOpacity={0.8}>
-      <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
+    <Pressable
+      style={({pressed}) => [
+        styles.container,
+        {backgroundColor: pressed ? `${theme.primary}ee` : theme.primary},
+        style,
+      ]}
+      onPress={onPress}>
+      {children ? children : <></>}
+      {text ? <Text style={styles.text}>{text}</Text> : <></>}
+    </Pressable>
   );
 };
 

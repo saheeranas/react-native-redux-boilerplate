@@ -24,7 +24,7 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
     <Card style={styles.card}>
       <Pressable
         // eslint-disable-next-line react-native/no-inline-styles
-        style={[styles.row, {opacity: item.done ? 0.8 : 1}]}
+        style={[styles.row, {opacity: item.done ? 0.3 : 1}]}
         accessibilityLabel={
           item.done ? 'Tap to uncheck from list' : 'Tap to check from list'
         }
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingVertical: 6,
   },
   title: {
     fontSize: 14,
