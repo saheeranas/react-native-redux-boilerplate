@@ -3,3 +3,4 @@
 
 # npm run lint 
 npx lint-staged
+yarn test
