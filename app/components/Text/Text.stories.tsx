@@ -3,16 +3,14 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import {ThemeProvider} from '../../theme/useTheme';
-import {Button} from './Button';
+import Text from './';
 
-const ButtonMeta = {
-  title: 'Button',
-  component: Button,
-  argTypes: {
-    onPress: {action: 'pressed the button'},
-  },
+const TextMeta = {
+  title: 'Text',
+  component: Text,
+  argTypes: {},
   args: {
-    text: 'Hello world',
+    children: 'The quick brown fox\n jumps over the lazy dog',
   },
   decorators: [
     Story => (
@@ -23,20 +21,20 @@ const ButtonMeta = {
       </ThemeProvider>
     ),
   ],
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof Text>;
 
-export default ButtonMeta;
+export default TextMeta;
 
-type ButtonStory = ComponentStoryObj<typeof Button>;
+type TextStory = ComponentStoryObj<typeof Text>;
 
 // ----- Variations ----
 // Basic
-export const Basic: ButtonStory = {};
+export const Basic: TextStory = {};
 
-// Another
-export const Another: ButtonStory = {
+// TitleLarge
+export const TitleLarge: TextStory = {
   args: {
-    text: 'Press me!',
+    variant: 'titleLarge',
   },
 };
 
