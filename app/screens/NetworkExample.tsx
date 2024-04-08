@@ -1,10 +1,11 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import NetwokExampleCard from '../components/NetwokExampleCard';
+import Text from '../components/Text';
 
 import {RootState, AppDispatch} from '../store/store';
 import {fetchUser, createUser} from '../store/dummyNetwork';
@@ -47,9 +48,11 @@ export default function NetworkExample() {
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users/1
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>{dataStatus}</Text>
+          <Text style={[styles.status, {color: theme.color}]}>
+            {dataStatus}
+          </Text>
 
-          {dataStatus === 'succeeded' ? (
+          {dataStatus === 'success' ? (
             <>
               <Text style={{color: theme.color}}>{user.name}</Text>
               <Text style={{color: theme.color}}>{user.email}</Text>
@@ -71,7 +74,7 @@ export default function NetworkExample() {
           <Text style={[styles.url, {color: theme.color}]}>
             URL: https://jsonplaceholder.typicode.com/users
           </Text>
-          <Text style={[styles.url, {color: theme.color}]}>
+          <Text style={[styles.status, {color: theme.color}]}>
             {newUserStatus}
           </Text>
 
@@ -103,7 +106,11 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   url: {
+    marginBottom: 10,
+  },
+  status: {
     fontSize: 12,
+    fontWeight: 'bold',
     marginBottom: 10,
   },
   code: {

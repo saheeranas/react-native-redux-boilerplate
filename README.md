@@ -86,6 +86,28 @@ or
 npm run ios
 ```
 
+## How to use StoryBook?
+
+You can create custom component library and maintain using storybook.
+
+### View StoryBook mode
+
+By running following command, you can start metro server
+
+```
+yarn storybook:start
+or
+npm run storybook:start
+```
+
+### Add a new component to StoryBook
+
+You can see multiple components added to StoryBook in this App already.
+
+1. Each component shall have a 'component.stories.tsx' file, which contains definition and multiple variants of the same component (eg:- primary, secondary or h1, h2, p etc)
+
+2. This 'stories' file need to imported in getStories function in '.storybook/storybook.requires.js' file
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details

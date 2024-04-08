@@ -41,12 +41,31 @@ const spacing: spacingType = {
 
 // Type Sizes:- Font sizes and weights
 const typeSizes: typeSizesType = {
-  FONT_SIZE_SMALL: 12,
-  FONT_SIZE_MEDIUM: 14,
   FONT_SIZE_LARGE: 16,
+  FONT_SIZE_MEDIUM: 14,
+  FONT_SIZE_SMALL: 12,
   FONT_WEIGHT_LIGHT: 200,
   FONT_WEIGHT_MEDIUM: 600,
-  FONT_WEIGHT_HEAVY: 800,
+  FONT_WEIGHT_HEAVY: 700,
+};
+
+const typeVariants = {
+  titleLarge: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: typeSizes.FONT_SIZE_LARGE,
+  },
+  titleSmall: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: typeSizes.FONT_SIZE_SMALL,
+  },
+  bodyMedium: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: typeSizes.FONT_SIZE_MEDIUM,
+  },
+  bodySmall: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: typeSizes.FONT_SIZE_SMALL,
+  },
 };
 
 // Themes:- Can alter values here. Can only be consumed through Context (see useTheme.js file)
@@ -54,8 +73,8 @@ const themes: themesType = {
   light: {
     name: 'light',
     color: '#695D5D',
-    primary: '#EF936E',
-    layoutBg: '#F4F3F1',
+    primary: '#2bbca2',
+    layoutBg: '#e0eeec',
     cardBg: '#ffffff',
     cardBorderColor: '#EEECEC',
     accent: '#0071ff',
@@ -64,7 +83,7 @@ const themes: themesType = {
   dark: {
     name: 'dark',
     color: '#ffffff',
-    primary: '#EF936E',
+    primary: '#2bbca2',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
     cardBorderColor: '#1A1A1A',
@@ -73,4 +92,4 @@ const themes: themesType = {
   },
 };
 
-export {spacing, typeSizes, themes};
+export {spacing, typeSizes, typeVariants, themes};

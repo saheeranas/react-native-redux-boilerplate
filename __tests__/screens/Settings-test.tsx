@@ -23,6 +23,6 @@ describe('Settings screen', () => {
     expect(
       StyleSheet.flatten(getByTestId('Layout.LayoutContainer').props.style)
         .backgroundColor,
-    ).toBe('#F4F3F1');
+    ).toBe('#e0eeec');
   });
 });

@@ -4,7 +4,7 @@ import apiClient from '../services/api-client';
 
 // Types
 type User = {
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  status: 'idle' | 'loading' | 'success' | 'failed';
   name: string;
   email: string;
 };
@@ -61,7 +61,7 @@ const dummyNetwokSlice = createSlice({
         state.data.status = 'loading';
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
-        state.data.status = 'succeeded';
+        state.data.status = 'success';
         state.data.name = action.payload.data.name;
         state.data.email = action.payload.data.email;
       })
@@ -74,7 +74,7 @@ const dummyNetwokSlice = createSlice({
         state.newUser.status = 'loading';
       })
       .addCase(createUser.fulfilled, (state, action) => {
-        state.newUser.status = 'succeeded';
+        state.newUser.status = 'success';
         state.newUser.name = action.payload.data.name;
         state.newUser.email = action.payload.data.email;
       })

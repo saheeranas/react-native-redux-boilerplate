@@ -1,14 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Pressable,
-  ActivityIndicator,
-} from 'react-native';
+import {StyleSheet, View, Pressable, ActivityIndicator} from 'react-native';
 import React from 'react';
 
 import {useTheme} from '../theme/useTheme';
 import {spacing} from '../theme/theme';
+import Text from './Text';
 
 type NetworkExampleCardProps = {
   title: string;
@@ -46,7 +41,9 @@ const NetwokExampleCard = ({
           {loading ? (
             <ActivityIndicator size="small" color="#ffffff" />
           ) : (
-            <Text style={styles.btnFireText}>Fire</Text>
+            <Text variant="bodySmall" style={styles.btnFireText}>
+              Fire
+            </Text>
           )}
         </Pressable>
       </View>
@@ -70,10 +67,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 16,
   },
   cardTitle: {
-    fontSize: 16,
     fontWeight: 'bold',
   },
   cardBody: {

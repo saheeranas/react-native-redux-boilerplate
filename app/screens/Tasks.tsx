@@ -2,6 +2,8 @@ import React, {useState, useRef} from 'react';
 import {StyleSheet, FlatList, View, TextInput} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import {taskAdded, taskToggled} from '../store/tasksSlice';
 import {RootState} from '../store/store';
 import {Task} from '../store/tasksSlice';
@@ -10,6 +12,8 @@ import {useTheme} from '../theme/useTheme';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import ListItem from '../components/ListItem';
+import {Button} from '../components/Button/Button';
+import {typeVariants} from '../theme/theme';
 
 const Tasks = () => {
   const {theme} = useTheme();
@@ -55,24 +59,26 @@ const Tasks = () => {
         style={[styles.inputCard, {borderTopColor: theme?.cardBorderColor}]}>
         {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
-          <View style={styles.inputBtnWrp}>
-            <TextInput
-              testID="Tasks.newTaskInput"
-              ref={inputRef}
-              placeholder="New Task"
-              placeholderTextColor={theme?.color}
-              style={[
-                styles.input,
-                {
-                  color: theme?.color,
-                  backgroundColor: theme?.layoutBg,
-                  borderColor: theme?.layoutBg,
-                },
-              ]}
-              onChangeText={t => setText(t)}
-              onSubmitEditing={() => addNewTask()}
-            />
-          </View>
+          <TextInput
+            testID="Tasks.newTaskInput"
+            ref={inputRef}
+            placeholder="New Task"
+            placeholderTextColor={theme?.color}
+            style={[
+              styles.input,
+              typeVariants.bodyMedium,
+              {
+                color: theme?.color,
+                backgroundColor: theme?.layoutBg,
+                borderColor: theme?.layoutBg,
+              },
+            ]}
+            onChangeText={t => setText(t)}
+            onSubmitEditing={() => addNewTask()}
+          />
+          <Button onPress={addNewTask} style={styles.btnAdd}>
+            <Icon name="checkmark-sharp" size={20} color={theme.layoutBg} />
+          </Button>
         </View>
         {/* TextInput and InputButton ends here */}
       </Card>
@@ -125,16 +131,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#f6f6f6',
   },
   btnAdd: {
-    borderRadius: 20,
+    borderRadius: 5,
     padding: 6,
-    flex: 0.3,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0071ff',
     color: '#fff',
-    height: 38,
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
+    height: 42,
+    marginLeft: 5,
   },
   btnAddText: {
     color: '#fff',
