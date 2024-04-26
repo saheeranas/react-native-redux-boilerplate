@@ -5,7 +5,11 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-  testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/'],
+  testPathIgnorePatterns: [
+    '\\.snap$',
+    '<rootDir>/node_modules/',
+    '<rootDir>/e2e/',
+  ],
   transformIgnorePatterns: ['node_modules/?!(static-container)', 'jest-runner'],
   cacheDirectory: '.jest/cache',
   globals: {
