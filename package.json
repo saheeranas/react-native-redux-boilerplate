@@ -9,6 +9,8 @@
     "test": "jest",
     "test-uss": "jest --updateSnapshot",
     "watch": "jest --watchAll",
+    "detox:build:androidDebug": "detox build --configuration android.emu.debug",
+    "detox:test:androidDebug": "yarn run detox:build:androidDebug && detox test --configuration android.emu.debug",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "reverse": "adb -s emulator-5554 reverse tcp:4001 tcp:4001",
     "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
