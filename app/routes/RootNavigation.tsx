@@ -86,6 +86,7 @@ export default function RootNavigation() {
           component={Tasks}
           options={{
             tabBarIcon: homeIcon,
+            tabBarTestID: 'BottomTab.ToDo',
           }}
         />
         <Tab.Screen
@@ -93,6 +94,7 @@ export default function RootNavigation() {
           component={NetworkExample}
           options={{
             tabBarIcon: networkIcon,
+            tabBarTestID: 'BottomTab.Network',
           }}
         />
         <Tab.Screen
@@ -101,6 +103,7 @@ export default function RootNavigation() {
           options={{
             // headerShown: false,
             tabBarIcon: settingsIcon,
+            tabBarTestID: 'BottomTab.Settings',
           }}
         />
       </Tab.Navigator>

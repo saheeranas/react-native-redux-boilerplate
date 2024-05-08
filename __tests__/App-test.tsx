@@ -6,9 +6,12 @@ import 'react-native';
 import React from 'react';
 // Note: import explicitly to use the types shipped with jest.
 import {jest, describe, it, expect} from '@jest/globals';
-import {render} from '@testing-library/react-native';
+// import {render} from '@testing-library/react-native';
+
+import {render} from '../app/utils/test-utils';
 
 import App from '../App';
+import RootNavigation from '../app/routes/RootNavigation';
 
 jest.useFakeTimers();
 
@@ -20,8 +23,13 @@ describe('App', () => {
     renderer.create(<App />);
   });
 
-  it('should renders correctly', () => {
-    const page = render(<App />);
+  it('should match snapshot correctly', () => {
+    const page = render(<RootNavigation />, {});
     expect(page.toJSON()).toMatchSnapshot();
+  });
+
+  it('Renders bottom tab bar', () => {
+    let {getByTestId} = render(<RootNavigation />, {});
+    getByTestId('BottomTab.Network');
   });
 });

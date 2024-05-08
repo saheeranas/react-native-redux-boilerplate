@@ -6,10 +6,10 @@ import {useTheme} from '../theme/useTheme';
 import {LayoutPropsType} from '../types/components';
 import {ThemeContextInterface} from '../theme/useTheme';
 
-const Layout = ({children, style}: LayoutPropsType) => {
+const Layout = ({children, style, ...rest}: LayoutPropsType) => {
   const {theme}: Partial<ThemeContextInterface> = useTheme();
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} {...rest}>
       <StatusBar
         animated
         backgroundColor={theme.cardBg}
