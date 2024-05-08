@@ -45,7 +45,7 @@ const Tasks = () => {
   const keyExtractor = (item: Task) => `task-${item.id}`;
 
   return (
-    <Layout>
+    <Layout testID="Screen.Tasks">
       {/* Tasks Listing starts here */}
       <FlatList
         data={todoList}

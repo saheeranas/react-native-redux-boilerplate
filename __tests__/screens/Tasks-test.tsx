@@ -7,7 +7,12 @@ import {fireEvent, render} from '../../app/utils/test-utils';
 import Tasks from '../../app/screens/Tasks';
 
 describe('Tasks screen', () => {
-  it('Renders the screen', () => {
+  it('the screen exists', () => {
+    let {getByTestId} = render(<Tasks />, {});
+    getByTestId('Screen.Tasks');
+  });
+
+  it('screen has a input with placeholder "New Task"', () => {
     let {getByPlaceholderText} = render(<Tasks />, {});
     getByPlaceholderText('New Task');
   });

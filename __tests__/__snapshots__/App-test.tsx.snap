@@ -88,6 +88,7 @@ exports[`App should match snapshot correctly 1`] = `
                 "flex": 1,
               }
             }
+            testID="Screen.Tasks"
           >
             <View
               style={
