@@ -30,7 +30,7 @@
     "axios": "^1.6.8",
     "formik": "^2.4.5",
     "react": "18.2.0",
-    "react-native": "0.73.6",
+    "react-native": "0.74.1",
     "react-native-dotenv": "^3.4.11",
     "react-native-keychain": "^8.2.0",
     "react-native-mmkv": "^2.12.2",
@@ -48,10 +48,10 @@
     "@react-native-async-storage/async-storage": "^1.23.1",
     "@react-native-community/datetimepicker": "^7.6.3",
     "@react-native-community/slider": "^4.5.0",
-    "@react-native/babel-preset": "0.73.21",
-    "@react-native/eslint-config": "0.73.2",
-    "@react-native/metro-config": "0.73.5",
-    "@react-native/typescript-config": "0.73.1",
+    "@react-native/babel-preset": "0.74.83",
+    "@react-native/eslint-config": "0.74.83",
+    "@react-native/metro-config": "0.74.83",
+    "@react-native/typescript-config": "0.74.83",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-controls": "^6.5.16",
     "@storybook/addon-ondevice-actions": "^6.5.3",
@@ -86,6 +86,7 @@
   "engines": {
     "node": ">=18"
   },
+  "packageManager": "yarn@3.6.4",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
