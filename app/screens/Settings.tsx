@@ -29,7 +29,7 @@ const Settings = () => {
     <Layout>
       <ScrollView
         style={[styles.contentContainer, {backgroundColor: theme.layoutBg}]}>
-        <Card style={{backgroundColor: theme.cardBg, marginBottom: 50}}>
+        <Card style={[styles.card, {backgroundColor: theme.cardBg}]}>
           <View style={styles.avatarRow}>
             <Image source={avatar} style={styles.avatar} />
             <View>
@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 70,
     paddingHorizontal: 12,
+  },
+  card: {
+    marginBottom: 50,
   },
   header: {
     paddingLeft: 20,
