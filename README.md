@@ -16,7 +16,6 @@ A React Native starter template.
 
 - Redux setup with Redux Toolkit.
 - Offline storage with Redux Persist.
-- New Architecture ready (Android release build is success)
 - Typescript
 - Dark Mode
 - Navigation setup
