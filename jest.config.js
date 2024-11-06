@@ -9,6 +9,7 @@ module.exports = {
     '\\.snap$',
     '<rootDir>/node_modules/',
     '<rootDir>/e2e/',
+    '<rootDir>/.storybook/',
   ],
   transformIgnorePatterns: ['node_modules/?!(static-container)', 'jest-runner'],
   cacheDirectory: '.jest/cache',
@@ -19,5 +20,10 @@ module.exports = {
   },
   clearMocks: true,
   setupFilesAfterEnv: ['./jest.setup.js'],
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**'],
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!src/**/*stories.{ts,tsx}',
+  ],
+  modulePathIgnorePatterns: ['<rootDir>/.storybook/'],
 };

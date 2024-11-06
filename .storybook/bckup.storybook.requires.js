@@ -23,7 +23,7 @@ import '@storybook/addon-ondevice-actions/register';
 
 import {argsEnhancers} from '@storybook/addon-actions/dist/modern/preset/addArgs';
 
-import {decorators, parameters} from './preview';
+import {decorators, parameters} from './preview.ts';
 
 if (decorators) {
   if (__DEV__) {

@@ -1,4 +1,4 @@
-import {ComponentMeta, ComponentStoryObj} from '@storybook/react-native';
+import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
@@ -23,11 +23,11 @@ const ButtonMeta = {
       </ThemeProvider>
     ),
   ],
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
 export default ButtonMeta;
 
-type ButtonStory = ComponentStoryObj<typeof Button>;
+type ButtonStory = StoryObj<typeof ButtonMeta>;
 
 // ----- Variations ----
 // Basic

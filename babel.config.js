@@ -8,5 +8,6 @@ module.exports = {
         path: '.env',
       },
     ],
+    'transform-require-context',
   ],
 };

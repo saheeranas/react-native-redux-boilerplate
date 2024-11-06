@@ -1,7 +1,14 @@
-import {getStorybookUI} from '@storybook/react-native';
+// .storybook/index.tsx
+import {view} from './storybook.requires';
+import {MMKV} from 'react-native-mmkv';
 
-import './storybook.requires';
+export const storage = new MMKV();
 
-const StorybookUIRoot = getStorybookUI({});
+const StorybookUIRoot = view.getStorybookUI({
+  storage: {
+    getItem: key => Promise.resolve(storage.getString(key) || null),
+    setItem: (key, value) => Promise.resolve(storage.set(key, value)),
+  },
+});
 
 export default StorybookUIRoot;
