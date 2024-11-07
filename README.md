@@ -14,6 +14,7 @@ A React Native starter template.
 
 ## Features
 
+- New Architecture/Bridgeless Mode enabled by default.
 - Redux setup with Redux Toolkit.
 - Offline storage with Redux Persist.
 - Typescript
