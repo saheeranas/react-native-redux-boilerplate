@@ -16,10 +16,7 @@
     "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
     "release-android": "cd android && ./gradlew clean && cd .. && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle && cd android && ./gradlew assembleRelease && cd ..",
     "adb-log": "adb logcat *:E",
-    "prepare": "husky install",
-    "storybook:start": "cross-env STORYBOOK_MODE='TRUE' react-native start",
-    "storybook-generate": "sb-rn-get-stories",
-    "storybook-watch": "sb-rn-watcher"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-community/netinfo": "^11.4.1",
@@ -54,11 +51,6 @@
     "@react-native/eslint-config": "0.76.1",
     "@react-native/metro-config": "0.76.1",
     "@react-native/typescript-config": "0.76.1",
-    "@storybook/addon-actions": "^7.6.10",
-    "@storybook/addon-controls": "^7.6.10",
-    "@storybook/addon-ondevice-actions": "^7.6.10",
-    "@storybook/addon-ondevice-controls": "^7.6.10",
-    "@storybook/react-native": "^7.6.10",
     "@testing-library/jest-native": "^5.4.2",
     "@testing-library/react-native": "^12.4.4",
     "@types/react": "^18.2.6",
