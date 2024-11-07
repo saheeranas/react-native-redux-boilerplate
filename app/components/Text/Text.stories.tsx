@@ -1,4 +1,4 @@
-import {ComponentMeta, ComponentStoryObj} from '@storybook/react-native';
+import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
@@ -21,11 +21,11 @@ const TextMeta = {
       </ThemeProvider>
     ),
   ],
-} as ComponentMeta<typeof Text>;
+} satisfies Meta<typeof Text>;
 
 export default TextMeta;
 
-type TextStory = ComponentStoryObj<typeof Text>;
+type TextStory = StoryObj<typeof TextMeta>;
 
 // ----- Variations ----
 // Basic
