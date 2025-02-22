@@ -3,7 +3,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import ReduxProvider from './app/store';
 import {ThemeProvider} from './app/theme/useTheme';
-import {NoInternetToast} from './app/components/NoInternet';
+// import {NoInternetToast} from './app/components/NoInternet';
 
 // Navigation
 import RootNavigation from './app/routes/RootNavigation';
@@ -14,7 +14,7 @@ let Root = function App() {
       <ReduxProvider>
         <ThemeProvider>
           <RootNavigation />
-          <NoInternetToast />
+          {/* <NoInternetToast /> */}
         </ThemeProvider>
       </ReduxProvider>
     </SafeAreaProvider>
