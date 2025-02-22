@@ -29,10 +29,10 @@ A React Native starter template.
 
 ## Dependencies
 
-- React Native **v0.76.5**
+- React Native **v0.78.0**
 - Redux Toolkit (RTK) v2.0
 - TypeScript
-- React Navigation v6
+- React Navigation v7
 - React Native Vector Icons
 - Formik & Yup
 - Axios
