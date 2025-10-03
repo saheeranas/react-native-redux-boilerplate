@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, Pressable} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@react-native-vector-icons/ionicons';
 import {useTheme, ThemeContextInterface} from '../theme/useTheme';
 import Card from './Card';
 import Text from './Text';
@@ -42,7 +42,7 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
           ]}>
           {item.title}
         </Text>
-        <Icon
+        <Ionicons
           name="checkbox"
           size={20}
           color={item.done ? theme.primary : '#CECECE'}
