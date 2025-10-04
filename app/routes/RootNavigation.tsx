@@ -4,12 +4,13 @@
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
 import React, {useEffect} from 'react';
-import {ColorValue} from 'react-native';
+import {ColorValue, Platform} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@react-native-vector-icons/ionicons';
 import {useDispatch} from 'react-redux';
 // import {useSelector, useDispatch} from 'react-redux';
 
@@ -30,14 +31,14 @@ import NetworkExample from '../screens/NetworkExample';
 import Settings from '../screens/Settings';
 
 // Icons for Bottom Tab Navigation
-const homeIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="list-sharp" size={30} color={color} />
+const homeIcon = ({color}: {color: ColorValue | undefined}) => (
+  <Ionicons name="list-sharp" size={30} color={color} />
 );
-const networkIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="wifi-sharp" size={24} color={color} />
+const networkIcon = ({color}: {color: ColorValue | undefined}) => (
+  <Ionicons name="wifi-sharp" size={24} color={color} />
 );
-const settingsIcon = ({color}: {color: ColorValue | number}) => (
-  <Icon name="settings-sharp" size={24} color={color} />
+const settingsIcon = ({color}: {color: ColorValue | undefined}) => (
+  <Ionicons name="settings-sharp" size={24} color={color} />
 );
 
 // Root Navigation
@@ -71,7 +72,7 @@ export default function RootNavigation() {
           },
           tabBarInactiveTintColor: theme.color,
           tabBarActiveTintColor: theme.primary,
-          headerStyle: {backgroundColor: theme.cardBg, height: 50},
+          headerStyle: {backgroundColor: theme.cardBg, height: Platform.OS == 'ios' ? 120 : 50},
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontFamily: typeVariants.titleLarge.fontFamily,
@@ -79,14 +80,14 @@ export default function RootNavigation() {
             color: theme.primary,
             fontWeight: 'bold',
           },
-          tabBarShowLabel: false,
+          tabBarShowLabel: true,
         }}>
         <Tab.Screen
           name="To Do"
           component={Tasks}
           options={{
             tabBarIcon: homeIcon,
-            tabBarTestID: 'BottomTab.ToDo',
+            // tabBarTestID: 'BottomTab.ToDo',
           }}
         />
         <Tab.Screen
@@ -94,7 +95,7 @@ export default function RootNavigation() {
           component={NetworkExample}
           options={{
             tabBarIcon: networkIcon,
-            tabBarTestID: 'BottomTab.Network',
+            // tabBarTestID: 'BottomTab.Network',
           }}
         />
         <Tab.Screen
@@ -103,7 +104,7 @@ export default function RootNavigation() {
           options={{
             // headerShown: false,
             tabBarIcon: settingsIcon,
-            tabBarTestID: 'BottomTab.Settings',
+            // tabBarTestID: 'BottomTab.Settings',
           }}
         />
       </Tab.Navigator>

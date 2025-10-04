@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import {StyleSheet, FlatList, View, TextInput} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@react-native-vector-icons/ionicons';
 
 import {taskAdded, taskToggled} from '../store/tasksSlice';
 import {RootState} from '../store/store';
@@ -77,7 +77,7 @@ const Tasks = () => {
             onSubmitEditing={() => addNewTask()}
           />
           <Button onPress={addNewTask} style={styles.btnAdd}>
-            <Icon name="checkmark-sharp" size={20} color={theme.layoutBg} />
+            <Ionicons name="checkmark-sharp" size={20} color={theme.layoutBg} />
           </Button>
         </View>
         {/* TextInput and InputButton ends here */}
