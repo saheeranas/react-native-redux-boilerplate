@@ -4,7 +4,7 @@
  * Uncomment commented lines from return() of RootNavigation to wire Login flow
  */
 import React, {useEffect} from 'react';
-import {ColorValue} from 'react-native';
+import {ColorValue, Platform} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -72,7 +72,7 @@ export default function RootNavigation() {
           },
           tabBarInactiveTintColor: theme.color,
           tabBarActiveTintColor: theme.primary,
-          headerStyle: {backgroundColor: theme.cardBg, height: 50},
+          headerStyle: {backgroundColor: theme.cardBg, height: Platform.OS == 'ios' ? 120 : 50},
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontFamily: typeVariants.titleLarge.fontFamily,
@@ -86,7 +86,6 @@ export default function RootNavigation() {
           name="To Do"
           component={Tasks}
           options={{
-            title: 'Test',
             tabBarIcon: homeIcon,
             // tabBarTestID: 'BottomTab.ToDo',
           }}
