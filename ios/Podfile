@@ -23,8 +23,7 @@ target 'rn_redux_boilerplate' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   ) 
 
-  post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+  post_install do |installer| 
     react_native_post_install(
       installer,
       config[:reactNativePath],
