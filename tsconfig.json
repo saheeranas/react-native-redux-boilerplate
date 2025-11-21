@@ -1,5 +1,7 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json" /* Recommended React Native TSConfig base */,
+  "extends": "@react-native/typescript-config/tsconfig" /* Recommended React Native TSConfig base */,
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["**/node_modules", "**/Pods"],
   "compilerOptions": {
     "jsx": "react",
     /* Completeness */
