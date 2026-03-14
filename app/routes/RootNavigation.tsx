@@ -16,7 +16,7 @@ import {useDispatch} from 'react-redux';
 
 // Hook for theme change (Light/Dark Mode)
 import {useTheme} from '../theme/useTheme';
-import {typeVariants} from '../theme/theme';
+import {typeVariants} from '../theme/theme'
 // Get Value from Keyring (Encrypted token)
 import {getSecureValue} from '../utils/keyChain';
 // Redux slice for updating Access Token to store
@@ -72,7 +72,7 @@ export default function RootNavigation() {
           },
           tabBarInactiveTintColor: theme.color,
           tabBarActiveTintColor: theme.primary,
-          headerStyle: {backgroundColor: theme.cardBg, height: Platform.OS == 'ios' ? 120 : 50},
+          headerStyle: {backgroundColor: theme.cardBg, height: Platform.OS === 'ios' ? 120 : 50},
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontFamily: typeVariants.titleLarge.fontFamily,
@@ -86,8 +86,8 @@ export default function RootNavigation() {
           name="To Do"
           component={Tasks}
           options={{
-            tabBarIcon: homeIcon,
-            // tabBarTestID: 'BottomTab.ToDo',
+            tabBarIcon: homeIcon, 
+            tabBarButtonTestID: 'BottomTab.ToDo',
           }}
         />
         <Tab.Screen
@@ -95,7 +95,7 @@ export default function RootNavigation() {
           component={NetworkExample}
           options={{
             tabBarIcon: networkIcon,
-            // tabBarTestID: 'BottomTab.Network',
+            tabBarButtonTestID: 'BottomTab.Network',
           }}
         />
         <Tab.Screen
@@ -104,7 +104,7 @@ export default function RootNavigation() {
           options={{
             // headerShown: false,
             tabBarIcon: settingsIcon,
-            // tabBarTestID: 'BottomTab.Settings',
+            tabBarButtonTestID: 'BottomTab.Settings',
           }}
         />
       </Tab.Navigator>
