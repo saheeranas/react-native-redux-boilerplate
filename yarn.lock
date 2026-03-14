@@ -1732,21 +1732,21 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-5.1.2.tgz#b7255c27b52d74440bcf146a05dcf13c94e7d91c"
   integrity sha512-UV/MjCyCtSjS5BQDrrGIMmCXm309xEG6XbR0Dj65kzTraJSVDxSjQS2uBUXgX+5SZUOCzCxzv3OufOZBdtQY4w==
 
-"@react-native-vector-icons/common@^12.4.0":
-  version "12.4.0"
-  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.4.0.tgz#60fc6f4d9a0e7e7b06f7c3a996e320c72c588a15"
-  integrity sha512-t9W0q+AW7WH1Oj5aEg7wGNXDLZJb5sIVkAWo5qtad3PcbBADqoCdikRK/ToLK+xlB0TxjcuL0T74ogudMkYGeA==
+"@react-native-vector-icons/common@^12.4.1":
+  version "12.4.1"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.4.1.tgz#ac83868048a078ccf0a9d94864723432147d1ccd"
+  integrity sha512-itfFrLRSNFgR7mS7C1JVuYs/H0WI2DiIW6JzN3MPzw0m1kycN7GPxWrO4/Je4G1JCW5x4i3lNvPB8259DtWLrQ==
   dependencies:
     find-up "^7.0.0"
     picocolors "^1.1.1"
     plist "^3.1.0"
 
-"@react-native-vector-icons/ionicons@^12.4.1":
-  version "12.4.1"
-  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/ionicons/-/ionicons-12.4.1.tgz#6bb7fffb17963e7c5e30aef6360b02067dc74783"
-  integrity sha512-3xvb8cnwMSssmhL2YAZUfy+H2WR73m00PM6+KXiV3u9KfpIPJ5hl7zeO30jRoFpZQkZ+lqP/KIJgPLpQrJLKzg==
+"@react-native-vector-icons/ionicons@^12.4.2":
+  version "12.4.2"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/ionicons/-/ionicons-12.4.2.tgz#52a6c496b67c220a102ab90170fab593310f2b1a"
+  integrity sha512-LQa58zaKZbbNSfKYuo8f4AU9gy1sGLu3m1iZfSDsFlyConmlFQ8IfDGcFO45pupckCxXa4D0kgNThQXgwSmXaA==
   dependencies:
-    "@react-native-vector-icons/common" "^12.4.0"
+    "@react-native-vector-icons/common" "^12.4.1"
 
 "@react-native/assets-registry@0.84.1":
   version "0.84.1"
@@ -3231,15 +3231,6 @@ cliui@^6.0.0:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
-
-cliui@^7.0.2:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/cliui/-/cliui-7.0.4.tgz#a0265ee655476fc807aea9df3df8df7783808b4f"
-  integrity sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==
-  dependencies:
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    wrap-ansi "^7.0.0"
 
 cliui@^8.0.1:
   version "8.0.1"
@@ -6820,7 +6811,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6992,14 +6983,6 @@ react-native-screens@^4.11.1:
     react-freeze "^1.0.0"
     react-native-is-edge-to-edge "^1.2.1"
     warn-once "^0.1.0"
-
-react-native-vector-icons@10.3.0:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-10.3.0.tgz#de440f2627a2ed1079ce3b99d5b9d4f86894df28"
-  integrity sha512-IFQ0RE57819hOUdFvgK4FowM5aMXg7C7XKsuGLevqXkkIJatc3QopN0wYrb2IrzUgmdpfP+QVIbI3S6h7M0btw==
-  dependencies:
-    prop-types "^15.7.2"
-    yargs "^16.1.1"
 
 react-native@^0.84.1:
   version "0.84.1"
@@ -8435,11 +8418,6 @@ yargs-parser@^18.1.2:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs-parser@^20.2.2:
-  version "20.2.9"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.9.tgz#2eb7dc3b0289718fc295f362753845c41a0c94ee"
-  integrity sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==
-
 yargs-parser@^21.0.0, yargs-parser@^21.1.1:
   version "21.1.1"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-21.1.1.tgz#9096bceebf990d21bb31fa9516e0ede294a77d35"
@@ -8471,19 +8449,6 @@ yargs@^15.1.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
-
-yargs@^16.1.1:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
-  integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
-  dependencies:
-    cliui "^7.0.2"
-    escalade "^3.1.1"
-    get-caller-file "^2.0.5"
-    require-directory "^2.1.1"
-    string-width "^4.2.0"
-    y18n "^5.0.5"
-    yargs-parser "^20.2.2"
 
 yargs@^17.0.0, yargs@^17.3.1, yargs@^17.6.2:
   version "17.7.2"
@@ -8523,9 +8488,9 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 yocto-queue@^1.0.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.2.1.tgz#36d7c4739f775b3cbc28e6136e21aa057adec418"
-  integrity sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.2.2.tgz#3e09c95d3f1aa89a58c114c99223edf639152c00"
+  integrity sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ==
 
 yup@^1.6.1:
   version "1.7.1"

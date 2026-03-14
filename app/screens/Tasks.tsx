@@ -77,8 +77,7 @@ const Tasks = () => {
             onSubmitEditing={() => addNewTask()}
           />
           <Button onPress={addNewTask} style={styles.btnAdd}>
-            {/* <Ionicons name="checkmark-sharp" size={20} color={theme.layoutBg} /> */}
-            <Ionicons name="american-football-outline" size={20} color="#000000"  />
+            <Ionicons name="checkmark-sharp" size={20} color={theme.layoutBg} /> 
           </Button>
         </View>
         {/* TextInput and InputButton ends here */}

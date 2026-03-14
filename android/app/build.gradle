@@ -128,10 +128,3 @@ configurations.all {
         force 'androidx.test:core:1.5.0'
     }
 }
- 
-// PROJECT RELATED CODE: DO NOT REMOVE WHEN UPGRADING
-project.ext.vectoricons = [
-    iconFontNames: [ 'Ionicons.ttf' ] // Name of the font files you want to copy
-]
-
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
