@@ -45,7 +45,7 @@ const Tasks = () => {
   const keyExtractor = (item: Task) => `task-${item.id}`;
 
   return (
-    <Layout testID="Screen.Tasks">
+    <Layout testID="Screen.Tasks"> 
       {/* Tasks Listing starts here */}
       <FlatList
         data={todoList}
@@ -77,7 +77,7 @@ const Tasks = () => {
             onSubmitEditing={() => addNewTask()}
           />
           <Button onPress={addNewTask} style={styles.btnAdd}>
-            <Ionicons name="checkmark-sharp" size={20} color={theme.layoutBg} />
+            <Ionicons name="checkmark-sharp" size={20} color={theme.layoutBg} /> 
           </Button>
         </View>
         {/* TextInput and InputButton ends here */}
