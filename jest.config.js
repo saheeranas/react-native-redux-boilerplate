@@ -1,5 +1,5 @@
 module.exports = {
-  preset: 'react-native',
+  preset: '@react-native/jest-preset',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '\\.(ttf)$': '<rootDir>/__mocks__/fileMock.js',
