@@ -6,8 +6,7 @@
     "jsx": "react",
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "baseUrl": ".",
-    "types": ["jest"]
+    "baseUrl": "."
   },
   "typeRoots": ["./app/types"]
 }
