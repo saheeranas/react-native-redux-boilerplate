@@ -1,12 +1,12 @@
 <!--
   Title: React Native Redux Boilerplate
-  Description: A starter template for React Native with Redux Toolkit
+  Description: A production-ready React Native boilerplate with Redux Toolkit (RTK), TypeScript, and React Navigation 7
   Author: saheeranas
   -->
 
-# React Native Redux boilerplate with Redux Toolkit (RTK) and TypeScript.
+# A production-ready React Native boilerplate with Redux Toolkit (RTK), TypeScript, and React Navigation 7
 
-A React Native starter template.
+This starter template provides a robust, scalable architecture for building modern React Native apps. It includes a complete Redux setup with Redux Toolkit for efficient state management, offline storage with Redux Persist, and a secure authentication flow. The project is built with TypeScript for type safety and comes packed with essential features like dark mode, environment variables, and a sample Todo app with CRUD operations to demonstrate best practices.
 
 <kbd>
   <img src="demo/assets/react-native-redux-boilerplate-saheer-anas.png?raw=true"> 
