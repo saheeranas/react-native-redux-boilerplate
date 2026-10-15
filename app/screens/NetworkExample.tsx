@@ -79,17 +79,17 @@ export default function NetworkExample() {
           </Text>
 
           <View style={styles.row}>
-            <View style={styles.grid}>
+            <View>
               <Text style={[styles.code, {color: theme.color}]}>Payload:</Text>
-              <Text style={[styles.code, {color: theme.color}]}>
+              <Text variant='bodySmall' style={[styles.code, {color: theme.color}]}>
                 {JSON.stringify(dummyData, null, 2)}
               </Text>
             </View>
-            <View style={styles.grid}>
+            <View>
               <Text style={[styles.code, {color: theme.color}]}>
                 From network:
               </Text>
-              <Text style={[styles.code, {color: theme.color}]}>
+              <Text variant='bodySmall' style={[styles.code, {color: theme.color}]}>
                 {JSON.stringify(newUser, null, 2)}
               </Text>
             </View>
@@ -114,10 +114,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   code: {
-    fontSize: 10,
+    fontSize: 14,
   },
-  row: {
-    flexDirection: 'row',
+  row: { 
     gap: 20,
   },
   grid: {

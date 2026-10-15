@@ -16,7 +16,7 @@ const MenuItem = ({
       style={[styles.menuItem, {borderTopColor: theme.layoutBg}]}
       onPress={onPress}>
       <View>
-        <Text>{label}</Text>
+        <Text variant='bodySmall'>{label}</Text>
       </View>
       <View>{rightItem}</View>
     </Pressable>
