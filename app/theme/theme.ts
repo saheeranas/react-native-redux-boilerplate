@@ -53,6 +53,7 @@ const typeVariants = {
   titleLarge: {
     fontFamily: 'Poppins-Bold',
     fontSize: typeSizes.FONT_SIZE_LARGE,
+    fontWeight: typeSizes.FONT_WEIGHT_HEAVY
   },
   titleSmall: {
     fontFamily: 'Poppins-Bold',
@@ -61,6 +62,7 @@ const typeVariants = {
   bodyMedium: {
     fontFamily: 'Poppins-Regular',
     fontSize: typeSizes.FONT_SIZE_MEDIUM,
+    fontWeight: typeSizes.FONT_WEIGHT_MEDIUM
   },
   bodySmall: {
     fontFamily: 'Poppins-Regular',
@@ -72,9 +74,9 @@ const typeVariants = {
 const themes: themesType = {
   light: {
     name: 'light',
-    color: '#695D5D',
-    primary: '#2bbca2',
-    layoutBg: '#e0eeec',
+    color: '#0F172A',
+    primary: '#3928D0',
+    layoutBg: '#f8faff',
     cardBg: '#ffffff',
     cardBorderColor: '#EEECEC',
     accent: '#0071ff',
@@ -83,7 +85,7 @@ const themes: themesType = {
   dark: {
     name: 'dark',
     color: '#ffffff',
-    primary: '#2bbca2',
+    primary: '#3928D0',
     layoutBg: '#121212',
     cardBg: '#1e1e1e',
     cardBorderColor: '#1A1A1A',

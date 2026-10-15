@@ -31,7 +31,7 @@ const NetwokExampleCard = ({
             borderTopRightRadius: spacing.borderRadius,
           },
         ]}>
-        <Text style={[styles.cardTitle, {color: theme.color}]}>{title}</Text>
+        <Text variant='titleLarge' style={[styles.cardTitle, {color: theme.color}]}>{title}</Text>
         <Pressable
           style={({pressed}) => [
             styles.btnFire,
@@ -48,7 +48,8 @@ const NetwokExampleCard = ({
         </Pressable>
       </View>
 
-      <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '60'}]}>
+      {/* <View style={[styles.cardBody, {backgroundColor: theme.cardBg + '60'}]}> */}
+      <View style={[styles.cardBody]}>
         {children}
       </View>
     </View>
@@ -69,22 +70,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
-  cardTitle: {
-    fontWeight: 'bold',
+  cardTitle: { 
+    // fontSize: 18, 
   },
   cardBody: {
-    backgroundColor: '#F8F7F7',
+    backgroundColor: '#F7F7F7',
     // height: 150,
     paddingHorizontal: 16,
     paddingVertical: 16,
+    borderBottomLeftRadius: spacing.borderRadius,
+    borderBottomRightRadius: spacing.borderRadius,
   },
   btnFire: {
     width: 60,
-    height: 25,
+    height: 30,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#2BBCA2',
-    borderRadius: 12,
+    borderRadius: 16,
+    borderCurve: "continuous"
   },
   btnFireText: {
     fontSize: 14,

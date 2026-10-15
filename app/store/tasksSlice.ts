@@ -16,12 +16,12 @@ const initialState: InitialState = {
   entities: [
     {
       id: '1',
-      title: 'Task 1',
+      title: 'Review design sprint feedback with engineering team',
       done: false,
     },
     {
       id: '2',
-      title: 'Task 2',
+      title: 'Finalize Mobile UI Design System specs',
       done: false,
     },
   ],

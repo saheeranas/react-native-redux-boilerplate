@@ -32,7 +32,13 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
         accessibilityRole="radio"
         accessibilityState={{checked: item.done}}
         onPress={() => onPress(item.id)}>
+        <Ionicons
+          name="checkbox-outline"
+          size={26}
+          color={item.done ? theme.primary : '#CECECE'}
+        />
         <Text
+          variant='bodyMedium'
           style={[
             // eslint-disable-next-line react-native/no-inline-styles
             {
@@ -41,12 +47,7 @@ const ListItem = ({item, onPress}: ListItemType): JSX.Element => {
             },
           ]}>
           {item.title}
-        </Text>
-        <Ionicons
-          name="checkbox"
-          size={20}
-          color={item.done ? theme.primary : '#CECECE'}
-        />
+        </Text> 
       </Pressable>
     </Card>
   );
@@ -59,9 +60,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'row', 
     alignItems: 'center',
     paddingVertical: 2,
-  },
+    columnGap: 16
+  }, 
 });
