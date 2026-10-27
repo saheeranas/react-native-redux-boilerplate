@@ -29,7 +29,7 @@ This starter template provides a robust, scalable architecture for building mode
 
 ## Dependencies
 
-- React Native **v0.87.0**
+- React Native **v0.88.0**
 - Redux Toolkit (RTK) v2.0
 - TypeScript
 - React Navigation v7
